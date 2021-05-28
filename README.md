@@ -14,16 +14,16 @@ The Hard and Medium Level topic will generally be solved by combination of these
 3) For Each Category of questions note KEYWORDS, BASIC INTUTION(TECHNIQUE) ,POSSIBLE EDGE CASES, GENERAL STRUCTURE of CODE SOLUTION
 
 4 ) Now when you solve a new question,
-    Note The TOPIC the question is asked from,
-    (when you practice number of questions you can get idea of topic OR
-    when you start from BRUTE FORCE APPROACH, you can see what DS/Algo can optimize the solution),
-    Then once Topic is confirmed
-    Note the KEYWORDS,
-    Think of all the TECHNIQUES that you have already studied and try to fit in your solution
-    Once it is confirmed, DRY RUN on two or three basic test cases(empty || one sized || large sized)
-    Think of POSSIBLE EDGE CASES AND GENERAL CODE STRUCTURE
-    LASTLY,the thing to note is the code should have variable names that makes code easier 
-    to understand without much commenting
+    a) Note The TOPIC the question is asked from,
+    b) (when you practice number of questions you can get idea of topic OR
+    c) when you start from BRUTE FORCE APPROACH, you can see what DS/Algo can optimize the solution),
+    d) Then once Topic is confirmed
+    e) Note the KEYWORDS,
+    f) Think of all the TECHNIQUES that you have already studied and try to fit in your solution
+    g) Once it is confirmed, DRY RUN on two or three basic test cases(empty || one sized || large sized)
+    h) Think of POSSIBLE EDGE CASES AND GENERAL CODE STRUCTURE
+    i) LASTLY,the thing to note is the code should have variable names that makes code easier 
+    j) to understand without much commenting
     
     Chances are you might not be able to do above steps immediately in high pressure situation
     In such scenarios first start with Brute Force Approach,
