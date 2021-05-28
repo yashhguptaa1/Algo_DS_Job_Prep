@@ -1,0 +1,6 @@
+Save all previous states in order where most recent state is at top and least recent state is at bottom
+Now compare the current state to most recent state , if most recent state is not neceessary pop(remove) it
+and then go on to next recent state and keep on comparing current state to next to next recent till you achieve
+desired result or there are no more previous states left to compare
+Chances are on comparison you may obtain some answer which is generally stored in array
+

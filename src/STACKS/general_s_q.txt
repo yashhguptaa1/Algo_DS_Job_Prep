@@ -1,0 +1,9 @@
+ArrayList is a DS that gives us full freedom to work on data as we need
+we can add / delete/ modify /at any index
+we can manipulate and add any kind of random data
+
+STACKS AND QUEUES
+are more disciplined kind of DS
+they allow add / delete / modify only under certain condition
+on top of that they are used to store HISTORIES rather than any random data
+cauz then only will stack and queue would be able to fullfill its purpose
