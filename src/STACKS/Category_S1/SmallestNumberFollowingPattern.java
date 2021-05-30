@@ -37,6 +37,7 @@ public class SmallestNumberFollowingPattern {
             }
         }
 
+        //since for every character of input we have two numbers mapped to it
         st.push(counter);
         while (st.size() > 0)
             System.out.print(st.pop());
