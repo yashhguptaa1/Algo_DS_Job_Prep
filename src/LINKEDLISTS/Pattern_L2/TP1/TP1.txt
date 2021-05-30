@@ -1,0 +1,3 @@
+Uses two pointers slow and fast
+slow moves by one
+fast moves by two
