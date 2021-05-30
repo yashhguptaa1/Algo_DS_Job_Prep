@@ -1,0 +1,37 @@
+
+1)Edge Case
+ We can be given an empty List or a list with only single element
+ Soln : check
+  if(head ==null || head.next == null)
+     return;
+
+ Base Case
+ Our code iterates to end of LL and points to null
+ we must return either some node(generally null or last node of LL)
+ or return void
+ Soln : check
+ if(node ==null)
+    return;
+
+
+2)Chances are when its asked in question you have to delete ans node you might have to delete head node
+    Also,Chances maybe your code will result in losing head pointer or end up changing it
+
+    Soln:
+    ListNode dummyHeadNode=new ListNode(-1);
+    ListNode left=dummyHeadNode;
+    dummyHeadNode.next=head;
+
+    //after whole code executes
+    return dummyHeadNode.next;
+
+3) Edge Cases to check your program on
+
+    TO DETERMINE BASE CASE
+    i)empty list
+    ii)one sized list
+    iii)two sized list
+
+    TO CHECK If YOUR CODE WORKS CORRECTLY
+    iv) even sized list
+    v)odd sized list
