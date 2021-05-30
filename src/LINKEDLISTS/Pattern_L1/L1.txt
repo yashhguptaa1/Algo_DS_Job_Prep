@@ -1,0 +1,6 @@
+Recursion in Linked Lists
+Although each recursive code can be solved iteratively
+but in case of LL it simplies code
+
+Generally recursion is used in LL to reach end node
+or reduce space search
