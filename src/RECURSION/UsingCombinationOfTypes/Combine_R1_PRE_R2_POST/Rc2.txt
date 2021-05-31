@@ -1,0 +1,41 @@
+CAN BE COMMONLY SEEN IN BINARY TREES QUESTIONS
+
+TWO RECURSIVE CALL MULTIPLE PHASES
+EXTENSION OF Type_R1 AND Type_R2 COMBINED
+
+YOU MAKE TWO RECURSIVE CALL in same code
+
+your code gets divided into parts as
+
+1) BASE CASE
+
+2) PREPHASE : work here
+
+3) LEFT RECURSIVE CALL (based on recursive tree diagram)
+
+4) IN PHASE : work here
+
+5) RIGHT RECURSIVE CALL (based on recursive tree diagram)
+
+6) POST PHASE : work here
+
+
+EXAMPLE
+
+public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        pzz(n);
+    }
+
+    public static void pzz(int n)
+    {
+        if(n == 0)
+            return;
+
+        System.out.print(n + " ");
+        pzz(n-1);
+        System.out.print(n + " ");
+        pzz(n-1);
+        System.out.print(n + " ");
+    }

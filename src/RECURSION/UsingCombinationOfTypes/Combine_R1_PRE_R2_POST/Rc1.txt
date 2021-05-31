@@ -1,0 +1,15 @@
+SINGLE RECURSIVE CALL MULTIPLE PHASES
+EXTENSION OF Type_R1 AND Type_R2 COMBINED
+
+YOU ONLY MAKE A SINGLE RECURSIVE CALL
+YOU WORK IN PRE PHASE AS WELL AS POST PHASE
+
+
+public static void pdi(int n){
+        if(n==0)
+            return;
+
+        System.out.println(n);
+        pdi(n-1);
+        System.out.println(n);
+    }

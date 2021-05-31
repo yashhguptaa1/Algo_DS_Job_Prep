@@ -1,0 +1,26 @@
+Type 1
+
+Work /Check /Compare in PRE PHASE.
+Then make recursive call which reduces search space every time.
+It means work on the way up till you hit base case.
+
+Then you just go on popping out recursive calls from call stack;
+
+It's structure is similar to that of tail recursion
+
+General Code Structure
+
+public static void funcRec ( int n)
+    {
+        1: BASE CASE
+            2: PRE PHASE WORK
+            if ()
+                do this
+                        
+        3: Recursive call                  
+        funcRec (n+1);
+    }
+
+
+Keywords in question
+
