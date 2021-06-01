@@ -1,4 +1,4 @@
-package RECURSION.Type_R1_PRE.Return_in_PrePhase;
+package RECURSION.Type_R1_PrePhase.Return_in_PrePhase;
 
 // Java implementation of recursive Binary Search
 public class BinarySearch {

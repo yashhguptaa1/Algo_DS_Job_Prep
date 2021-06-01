@@ -1,8 +1,8 @@
-package RECURSION.Type_R1_PRE.Print_in_PrePhase;
+package RECURSION.Type_R1_PrePhase.Print_in_PrePhase;
 
 import java.util.Scanner;
 
-public class DisplayArrayInReversePRE {
+public class DisplayArray {
 
     public static void main(String[] args) {
 
@@ -14,16 +14,17 @@ public class DisplayArrayInReversePRE {
         {
             arr[i]=sc.nextInt();
         }
-        PREprintDisplayArr(arr,n-1);
+        displayArr(arr,0);
     }
 
+    public static void displayArr(int[] arr, int idx){
 
-    public static void PREprintDisplayArr(int arr[],int idx)
-    {
-        if(idx < 0 )
+        if(idx == arr.length)
             return;
 
         System.out.println(arr[idx]);
-        PREprintDisplayArr(arr,idx-1);
+        displayArr(arr,idx+1);
+
     }
+
 }
