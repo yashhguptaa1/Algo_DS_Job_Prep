@@ -1,16 +1,62 @@
-This is an extension to TYPE_R1
+Type_R3.P1 : This is an extension to TYPE_R1_PRE
+           : It means work on the way up till you hit base case.
+           : It's structure is similar to that of tail recursion
 
-Work /Check /Compare in PRE PHASE.
-You have an argument RES or StringSoFar passed in recursive call
-THAT KEEPS ON UPDATING ITS VALUE DURING PREPHASE.
-Then make recursive call which reduces search space every time.
+1) Start from Main call
+    This contains an extra argument named RES or StringSoFar
+    which tracks/stores the intermediate result obtained as we
+    go depth vise in recursion.
 
-It means work on the way up till you hit base case.
+2) BASE CASE
+    You RETURN RESULT OR PRINT STRINGSOFAR when you hit base case
+    Then you just go on popping out recursive calls from call stack
 
-You RETURN RESULT OR PRINT STRINGSOFAR when you hit base case
-Then you just go on popping out recursive calls from call stack;
+3) In PRE PHASE.
+    We perform CHECK or COMPARISON to determine a VALUE
+    that can be used to UPDATE the argument RES or StringSoFar passed in recursive call
+    In case of Multiple recursive calls
+    This VALUE
+    THAT KEEPS ON UPDATING ITS VALUE DURING PREPHASE.
+    WE ARE PRESENT IN CURRENT RECURSIVE CALL AT THIS POINT
+    THIS MEANS IT DENOTES THE NODE WHICH IS CURRENT FUNC CALL
 
-It's structure is similar to that of tail recursion
+    NOW WE NOTE DOWN A VALUE (this value is generally used to determine options)
+    THAT WILL BE USED BY ALL THE BRANCHES COMING OUT FROM
+    THAT PARTICULAR NODE ONLY
+    THAT IS THIS VALUE WILL BE PASSED TO ALL RECURSIVE CALLS MADE FROM CURRENT NODE
+
+4) RECURSIVE CALLS
+
+    Using the VALUE obtained in PREPHASE, you update RES or StringSoFar
+    and pass this UPDATED VALUE and reduced search space in next recursive call
+
+    In Case of Multiple Recursive Calls
+    We pass different Updated Value to different Recursive calls respectively
+    to Denote All Possible Options we can have.
+
+    NUMBER OF RECURSIVE CALLS MADE FROM CURRENT NODE DENOTE
+    NUMBER OF BRANCHES WHICH IS SAME AS
+    NUMBER OPTIONS THAT EVERY RECURSIVE CALL CAN HAVE
+
+    TWO BRANCHES : TWO POSSIBLE OPTIONS
+    SUCH AS :
+    YES and NO
+    APPEND and NOTAPPEND
+    LEFTNODE and RIGHT NODE
+
+    TWO RECURSIVE CALL and RETURN/ PRINT IN BASE CASE
+    ques) PRINT ALL SUBSEQUENCES
+
+    USING FOR LOOP TO DENOTE MULTIPLE OPTIONS(BRANCHES)
+    MORE THAN TWO RECURSIVE CALLS ,
+
+
+5) RETURN STATEMENT
+    i) if return type is void we skip the last return statement
+        we only make Recursive calls(tail recursion) here
+
+    ii) if return type is not void we write return the next NEXT RECURSIVE CALL
+         (passing updated argument in it which reduces search space every time)
 
 General Code Structure
 

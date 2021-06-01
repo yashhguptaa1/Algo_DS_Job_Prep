@@ -1,7 +1,6 @@
-package RECURSION.UsingCombinationOfTypes.Combine_R3_P1_P2;
+package RECURSION.Type_R5_Work_PreP_RecCallP_WorkPostP.ReturnType_NotVoid;
 
 import java.io.*;
-import java.util.*;
 
 public class FindAllIndicesOfOccurrence {
 
