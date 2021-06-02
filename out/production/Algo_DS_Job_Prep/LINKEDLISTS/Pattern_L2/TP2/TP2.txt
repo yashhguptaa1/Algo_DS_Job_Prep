@@ -1,0 +1,5 @@
+Uses two pointers
+left and right
+
+first we place right pointer at correct position
+and then we traverse using left and right till we meet our required ans

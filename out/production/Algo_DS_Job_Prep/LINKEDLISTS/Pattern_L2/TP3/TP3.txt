@@ -1,0 +1,9 @@
+Two Pointer Approach
+
+You are either given two Linked list or you create two linked list
+use t1 (prev) ptr to traverse LL1
+use t2 (curr) ptr to traverse LL2
+keep track of nextNode before hand that is either check for null pointer or store the nextNode in ptr
+before moving your current ptr forward
+
+Also Create a DummyHeadNode as chances are you would lose head and its next will point to any one of the LLs head

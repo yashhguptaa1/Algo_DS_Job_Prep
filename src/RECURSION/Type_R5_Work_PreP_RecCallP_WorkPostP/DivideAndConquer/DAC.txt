@@ -1,0 +1,17 @@
+1) In PRE PHASE
+    Decide the factor on the basis of which you would divide your subproblems into two
+    i) Can be mid index of array (any DS)
+        Merge Sort
+    ii)Can be pivot index of array(any DS)
+        Quick Sort
+
+2) In CALL PHASE
+    Make Recursive Calls (Two Recursive Calls)
+    that point to two different subproblems of main problem
+    The updated argument to be passed in these recursive calls
+    is decided by the FACTOR obtained above
+
+   Also
+   If there is a return type Initialize variables to store answers of
+
+3)

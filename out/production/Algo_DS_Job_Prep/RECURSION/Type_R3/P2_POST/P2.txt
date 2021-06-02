@@ -1,0 +1,48 @@
+This is an extension to TYPE_R2
+
+AS YOU GO UP (in recursive tree diagram)
+Make future Recursive calls first either to reduce search space
+OR to traverse all elements ( all possibilities ) to reach end of a data structure .
+OR to have all the function calls that can be made stored with you in CALL STACK
+ALSO
+You store the INTERMEDIATE RESULT of these future recursive call
+
+You Hit BASE CASE
+RETURN the ans that would have been actual ans if you would have
+EMPTY test case OR NULL POINTER EXCEPTION OR CREATE A NEW ARRAY OR LIST
+
+Each time as you POP out rec call from CALL STACK
+
+DO your work / check / compare in POST PHASE on the INTERMEDIATE result
+returned from recursive call that was just popped out.
+
+Then return the new result obtained after working on INTERMEDIATE result
+
+General Code structure
+
+public static <T> funcRec ( int n) {
+
+        1) BASE CASE
+
+        2) T res = RECURSIVE CALL FUNC( n+1 );
+
+        3) DO your WORK
+
+        4) return (updated res);
+
+    }
+
+EXAMPLE
+public static int factorial(int n){
+        if(n==0)
+            return 1;
+
+        int INTERMEDIATE_RESULT=factorial(n-1); // Faith
+        int UPDATED_RESULT = n * INTERMEDIATE_RESULT;
+
+        return UPDATED_RESULT;
+
+//SHORTHAND VERSION
+//        return n * factorial(n-1);
+
+    }

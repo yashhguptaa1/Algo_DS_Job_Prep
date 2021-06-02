@@ -1,0 +1,2 @@
+We always store the next node of current in some ptr
+

@@ -1,0 +1,32 @@
+This is an extension to TYPE_R1
+
+Work /Check /Compare in PRE PHASE.
+You have an argument RES or StringSoFar passed in recursive call
+THAT KEEPS ON UPDATING ITS VALUE DURING PREPHASE.
+Then make recursive call which reduces search space every time.
+
+It means work on the way up till you hit base case.
+
+You RETURN RESULT OR PRINT STRINGSOFAR when you hit base case
+Then you just go on popping out recursive calls from call stack;
+
+It's structure is similar to that of tail recursion
+
+General Code Structure
+
+public static <T> funcRec ( int n, T resultSoFar)
+    {
+        1: BASE CASE
+            2: PRE PHASE WORK
+            if ()
+                do this
+                update resultSoFar here OR
+                directly pass updated resultSoFar in recursive call
+
+
+        3: Recursive call
+        funcRec (n+1,resultSoFar);
+    }
+
+
+Keywords in question
