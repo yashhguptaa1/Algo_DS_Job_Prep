@@ -86,4 +86,19 @@ COnsider Input
 
 Largest area is
 4 * {BASED ON INDEXING}(6-2 -1)
+
+As can be seen for current bar 4
+Next smaller on left of 4 decreases the height of the rectangle
+making it less than4
+we also know that elements between 4 and next smaller on left are either equal to 4 or greater than 4
+so if we take a rectangle of height 4 we can include these bars
+
+
+
+1. You are given a number n, representing the size of array a.
+2. You are given n numbers, representing the height of bars in a bar chart.
+3. You are required to find and print the area of largest rectangle in the histogram.
+
+e.g.
+for the array [6 2 5 4 5 1 6] -> 12
 */

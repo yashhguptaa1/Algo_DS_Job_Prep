@@ -10,6 +10,10 @@ public class EvaluateExpression {
             String s1 = A[i];
 
             //if current String is a number operand push it in stack
+
+            //NOTE
+            //THIS IS A GOOD WAY TO CHECK IF INPUT IS A NUMBER IF WE DONT KNOW THE RANGE OF INPUT
+            //CHECK WHETHER UNITS DIGIT FALLS IN BETWEEN 0 to 9
             if(s1.charAt(s1.length() - 1) >= '0' && s1.charAt(s1.length() - 1) <= '9')
                 s.push(Integer.parseInt(s1));
             else{
@@ -17,6 +21,7 @@ public class EvaluateExpression {
                 //if current string is an operator
                 //pop the first two elements from stack which are the first
                 //two operands for current operator to work on
+                //note first pop is assigned to b that is it will be second operand
                 int b = s.pop();
                 int a = s.pop();
 
@@ -67,5 +72,42 @@ public class EvaluateExpression {
 }
 
 /*
+Evaluate the value of an arithmetic expression in Reverse Polish Notation.
 
+Valid operators are +, -, *, /. Each operand may be an integer or another expression.
+
+
+
+Input Format
+
+The only argument given is character array A.
+Output Format
+
+Return the value of arithmetic expression formed using reverse Polish Notation.
+For Example
+
+Input 1:
+    A =   ["2", "1", "+", "3", "*"]
+Output 1:
+    9
+Explaination 1:
+    starting from backside:
+    *: ( )*( )
+    3: ()*(3)
+    +: ( () + () )*(3)
+    1: ( () + (1) )*(3)
+    2: ( (2) + (1) )*(3)
+    ((2)+(1))*(3) = 9
+
+Input 2:
+    A = ["4", "13", "5", "/", "+"]
+Output 2:
+    6
+Explaination 2:
+    +: ()+()
+    /: ()+(() / ())
+    5: ()+(() / (5))
+    1: ()+((13) / (5))
+    4: (4)+((13) / (5))
+    (4)+((13) / (5)) = 6
  */

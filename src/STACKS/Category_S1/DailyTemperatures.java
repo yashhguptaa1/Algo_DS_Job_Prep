@@ -25,6 +25,7 @@ public class DailyTemperatures {
             res[indx]=indx;
         }
 
+        //To count the number of days you will have to wait for warmer days
         for(int i=0;i< res.length;i++)
         {
             res[i]=res[i] - i;

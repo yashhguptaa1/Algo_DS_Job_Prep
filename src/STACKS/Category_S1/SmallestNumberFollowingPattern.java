@@ -28,6 +28,9 @@ public class SmallestNumberFollowingPattern {
             }
             else if(str.charAt(i) == 'i')
             {
+                //Push one extra counter before popping cauz
+                //Every char maps to two numbers
+                // ddd -> 4321
                 st.push(counter);
                 counter++;
                 while (st.size() > 0)

@@ -7,6 +7,9 @@ public class NextGreaterOnLeft {
     public int[] nextGreaterLeft(int arr[])
     {
         int res[]=new int[arr.length];
+
+        //Store Indices of Elements Smaller Than Current Ele
+        //Elements in stack will be present in Decreasing Order [ Bottom to Top]
         Stack<Integer> st = new Stack<>();
         st.push(arr.length-1);
 

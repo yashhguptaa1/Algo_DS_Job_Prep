@@ -1,7 +1,6 @@
 package STACKS.Category_S1;
 
 import java.util.*;
-
 public class BalancedParanthesis {
 
     public boolean isValid(String str) {
@@ -32,12 +31,10 @@ public class BalancedParanthesis {
                     //as valid pair of parans found
                     trackRecentOpeningParanthesis.pop();
                 }
-
                 else
                     return false;
 
             }
-
         }
 
         //There might be a test case where there are more number of opening paranthesis than closing ones

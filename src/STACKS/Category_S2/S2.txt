@@ -1,4 +1,5 @@
+These questions are extensions to Category_S1
+We generally use the concepts of Next Greater on Right /Left OR Smaller on Left/Right
+To obtain / find Left Boundary and Right Boundary of bounded regions
 
-To obtain / find left end and right end of bounded regions
-
-Using stacks to find optimal bounded regions and then work on them
+Now work on these bounded regions

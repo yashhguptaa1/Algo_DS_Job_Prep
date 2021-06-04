@@ -1,13 +1,13 @@
 package STACKS.Category_S1;
 
 import java.util.*;
-public class RedundantBraces {
+public class RedundantBraces_DuplicateBrackets {
     public static int braces(String A) {
 
         //To Store and track previous recent states
         //Here previous state will be when was opening bracket obtained
+        //and was there operands present in previous state
         Stack<Character>st =new Stack<>();
-
 
         //TRAVERSING ALL STATES
         for(int i=0;i<A.length();i++)
@@ -22,19 +22,23 @@ public class RedundantBraces {
                 st.push(currState);
             }
             else {
-                //Now our curent State is a closing bracket
+                //Now our current State is a closing bracket
                 //We compare the MOST RECENT PREVIOUS STATE WITH CURRENT STATE
-                //If Most recent state is a opening bracket we determine it to be useless state cauz there are no othr state b/w it
+                //If Most recent state is a opening bracket we determine it to be useless state
+                // cauz there are no other (operands) state b/w it
 //                if(st.peek() == '(')
 //                    return 1;
 
-                //If our Most recent state is not opening bracket we pop(remove) all unnecessary states in between
+                //If our Most recent state is not opening bracket we pop(remove)
+                // all unnecessary states in between (operands and operators)
                 //till our previous state becomes '(' opening bracket
 
                 int ans=1;
                 while (st.peek() != '(')
                 {
                     Character temp=st.pop();
+                    //If there is an operator present in any of previous state in stack
+                    //after opening bracket it means brackets are valid
                     if( temp == '+' || temp == '-' ||temp == '*' ||temp == '/')
                     {
                         ans =0;
@@ -48,9 +52,7 @@ public class RedundantBraces {
 
                 st.pop();
             }
-
         }
-
         return 0;
     }
 }
@@ -81,7 +83,7 @@ Output 1:
     1
     Explanation 1:
         ((a + b)) has redundant braces so answer will be 1.
-
+        (a) has redundant braces
 Input 2:
     A = "(a + (a + b))"
 Output 2:

@@ -49,13 +49,14 @@ public class StockSpan {
             res[indx.pop()] = -1;
         }
 
+        //Using indexes to count number of days passed between
+        // the current day and the first day before today when price was higher than today
         for(int i=0; i< res.length; i++)
         {
             res[i]=i-res[i];
         }
         return res;
     }
-
 }
 
 /*

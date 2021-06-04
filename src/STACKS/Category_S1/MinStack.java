@@ -4,19 +4,23 @@ import java.util.*;
 
 public class MinStack {
 
+
+// SOLVING MINSTACK PROBLEM USING CONSTANT SPACE
 //My submission on Interviewbit
 
     Stack<Integer>allElements=new Stack<>();
     int minSoFar=Integer.MAX_VALUE;
-
     public void push(int val) {
 
-        //if new value smaller than minNum already present update miniNum
-        //DETECTING AT WHICH POINT WE RECIEVED Value that updates its previous min
-        //for this we store a small fake value smaller than Value of actual num also min
+        //if new value smaller than minNum already present update minNum
+        //TO DETECT AT WHICH POINT WE RECIEVED New MinValue we store a small fake value
+
+        // 2 * NewMin - OldMin
+
+        //  that updates its previous min
+        //thus it is smaller than Value of actual num
         if(minSoFar > val) {
             // min. update
-            // 2 * val - oldMin
             allElements.push(val + val - minSoFar);
             // update min
             minSoFar = val;
@@ -40,8 +44,9 @@ public class MinStack {
             //In Brute Force Approach we were using 2nd STACK to store all previous minValues
             //that we obtained so when we popped our current min we could obtain min just before it
             // from 2nd stack as it stored all previous min
+
             //Now to code without using extra space we use concept of encryption decryption
-            // update oldmin
+            // update oldmin  // origVal is the Current Min (Current state)
             //stored value : [ origVal + (origVal - MostRecentPreviousMin)]
             //Now to get back MostRecentPreviousMin using currentMin
             // (2 * origVal) - [ origVal + (origVal - MostRecentPreviousMin)]
@@ -152,7 +157,9 @@ class Solution {
     }
 
     public void push(int x) {
+    //Push all the elements to stack
         stack.push(x);
+        //Only Push ele here if its minSoFar or there is no minValue obtained till now
         if(minStack.isEmpty() || x <= minStack.peek())
             minStack.push(x);
     }
@@ -210,7 +217,7 @@ public static class MinStack {
 
         int pop() {
             // write your code here
-            if(data.size() == 0) {
+            if(stack.size() == 0) {
                 System.out.println("Stack underflow");
                 return -1;
             }

@@ -7,6 +7,9 @@ public class NextSmallerOnRight {
     public int[] nextSmallerRight(int arr[])
     {
         int res[]=new int[arr.length];
+
+        //Store Indices of Elements Greater Than Current Ele
+        //Elements in stack will be present in Increasing Order [ Bottom to Top]
         Stack<Integer> st = new Stack<>();
         st.push(0);
 

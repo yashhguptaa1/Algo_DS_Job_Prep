@@ -4,8 +4,10 @@ import java.io.*;
 import java.util.*;
 
 public class ValidateStackSequence {
-    public static boolean validateStack(int pushed[],int popped[],int n)
+    public static boolean validateStackSequences(int pushed[],int popped[])
     {
+        int n=pushed.length;
+
         Stack<Integer>tracker=new Stack<>();
 
         int j=0;
@@ -30,6 +32,33 @@ public class ValidateStackSequence {
         return tracker.isEmpty();
     }
 
+    //Without using extra space Constant Space
+//    public static boolean validateStackSequences(int pushed[],int popped[])
+//    {
+//        int n=pushed.length;
+//        int tracker=0;
+//
+//        int j=0;
+//
+//        for(int i=0;i<n;i++)
+//        {
+//            while(tracker.size()>0 && j<n && tracker.peek() == popped[j])
+//            {
+//                tracker.pop();
+//                j++;
+//            }
+//            tracker.push(pushed[i]);
+//
+//        }
+//
+//        while(tracker.size()>0 && j<n && tracker.peek() == popped[j])
+//        {
+//            tracker.pop();
+//            j++;
+//        }
+//
+//        return tracker.isEmpty();
+//    }
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
         Scanner sc=new Scanner(System.in);
@@ -49,7 +78,7 @@ public class ValidateStackSequence {
             popped[i]=sc.nextInt();
         }
 
-        System.out.println(validateStack(pushed,popped,n));
+        System.out.println(validateStackSequences(pushed,popped));
     }
 }
 /*

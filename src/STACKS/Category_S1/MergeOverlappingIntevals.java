@@ -30,7 +30,7 @@ public class MergeOverlappingIntevals {
             Pair p = pairs[i];
 
             //agr current meeting(state) ka start time
-            //most recent previous meeting se kam (phle) he
+            //most recent previous meeting ke end time se kam (phle) he
             //we merge these intervals
             if (p.st <= st.peek().end) {
                 // end time may be update
@@ -56,3 +56,68 @@ public class MergeOverlappingIntevals {
     }
 
 }
+/*
+FROM INTERVIEWBIT
+They already provided us with a class to store pairs of start and end time
+In this case we sort like below
+
+ * Definition for an interval.
+ * public class Interval {
+ *     int start;
+ *     int end;
+ *     Interval() { start = 0; end = 0; }
+ *     Interval(int s, int e) { start = s; end = e; }
+ * }
+
+public class Solution {
+    public ArrayList<Interval> merge(ArrayList<Interval> intervals) {
+        ArrayList<Interval> result = new ArrayList<>();
+
+        Interval pairs[] = new Interval[intervals.size()];
+        for(int i = 0;i<intervals.size();i++)
+        {
+            pairs[i] = new Interval(intervals.get(i).start ,intervals.get(i).end );
+        }
+
+        Arrays.sort(pairs,new SortByStartTime());
+
+        Stack<Interval>meetingsSoFar=new Stack<>();
+
+        meetingsSoFar.push(pairs[0]);
+
+        for(int i = 1;i<pairs.length;i++)
+        {
+            Interval curr=pairs[i];
+
+            if(curr.start <= meetingsSoFar.peek().end)
+            {
+
+                if(curr.end > meetingsSoFar.peek().end)
+                {
+                    meetingsSoFar.peek().end = curr.end;
+                }
+            }
+            else {
+                meetingsSoFar.push(curr);
+            }
+        }
+        while (!meetingsSoFar.isEmpty())
+        {
+            result.add(meetingsSoFar.pop());
+        }
+
+        Collections.reverse(result);
+
+        return result;
+    }
+
+    class SortByStartTime implements Comparator<Interval>
+    {
+        public int compare(Interval s1,Interval s2)
+        {
+            return s1.start - s2.start;
+        }
+
+    }
+}
+ */

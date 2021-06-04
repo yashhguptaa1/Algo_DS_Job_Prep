@@ -2,7 +2,7 @@ package STACKS.Category_S2;
 
 import java.util.*;
 public class TrappingRainWater {
-    public int trap(final int[] height) {
+    public int trap(int[] height) {
 
         // Stores the indices of the bars
         Stack<Integer> stack = new Stack<>();
@@ -10,7 +10,7 @@ public class TrappingRainWater {
         // size of the array
         int n = height.length;
 
-        // Stores the final result
+        // Stores the final result that is total water that can be trapped
         int ans = 0;
 
         // Loop through the each bar
@@ -107,6 +107,6 @@ We found RightBoundary for CurrentBar
 
 Since We break as soon as we meet NGR
 so it means the bar just before top of stack must have been NGL
-for Current Bar
+for the Popped Bar
 
 */
