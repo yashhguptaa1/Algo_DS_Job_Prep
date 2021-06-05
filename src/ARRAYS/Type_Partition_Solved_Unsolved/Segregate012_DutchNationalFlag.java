@@ -18,7 +18,7 @@ public class Segregate012_DutchNationalFlag
 
         //Second Segment contains the elements yet to tackled
         //We track this segment using two pointers as this
-        // unsolved segment can contain 1s and 2s
+        // unsolved segment can contain 0s, 1s and 2s
         // firstIdx_UnsolvedSegment
         // lastIdx_UnsolvedSegment
 

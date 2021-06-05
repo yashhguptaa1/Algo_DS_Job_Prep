@@ -20,6 +20,10 @@ public class Segregate01 {
             }
             else
             {
+                //if curr ele is 0
+                //swap it with first1 of sorted1s
+                //so that 0 appends after the sorted subarray of 0
+                // we obtain stable sorting for 0s but not stable for 1
                 int temp=arr[IdxFirstUnsolved];
                 arr[IdxFirstUnsolved]=arr[firstOneOfSorted1s];
                 arr[firstOneOfSorted1s]=temp;

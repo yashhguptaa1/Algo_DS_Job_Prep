@@ -6,6 +6,7 @@ public class PartitionIndexArray {
 
     // It returns index of pivot element after placing it at correct Index
     //thus, it also rearranges the array
+
     public static int partitionIndex(int[] arr,int lo,int hi, int pivot){
         //write your code here
         int IdxFirst_Unsolved=lo;
@@ -26,7 +27,6 @@ public class PartitionIndexArray {
                 IdxFirst_Unsolved++;
             }
         }
-
         return IdxFirst_SolvedGreater - 1;
     }
 

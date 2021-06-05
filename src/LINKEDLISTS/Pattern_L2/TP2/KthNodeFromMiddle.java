@@ -70,4 +70,34 @@ public class KthNodeFromMiddle {
 
         return slow;
     }
+
+    // Kth Node from Last
+
+    public int kthFromLast(ListNode head,int k){
+        // write your code here
+
+        ListNode leftOfWindow = head;
+        ListNode rightOfWindow = head;
+
+
+        //considering 0 based indexing
+        // if k=3
+        //rightOfWindow will point to 4th node from start
+        // and as LeftWindow points to start
+        //thus there is adifference of k nodes between left and right
+        for (int i = 0; i < k; i++) {
+            rightOfWindow = rightOfWindow.next;
+        }
+
+        // Since k=0 is a valid input and it means we want the last node
+        //we make our loop run to .next != null
+        //instead of rightOfWindow!=null
+        while (rightOfWindow.next != null) {
+            leftOfWindow = leftOfWindow.next;
+            rightOfWindow = rightOfWindow.next;
+        }
+
+
+        return leftOfWindow.val;
+    }
 }

@@ -17,7 +17,6 @@ public class PartitionAnArray {
                 swap(arr,IdxFirst_Unsolved,IdxFirst_SolvedGreater);
                 IdxFirst_Unsolved++;
                 IdxFirst_SolvedGreater++;
-
             }
             else if(arr[IdxFirst_Unsolved] > pivot)
             {

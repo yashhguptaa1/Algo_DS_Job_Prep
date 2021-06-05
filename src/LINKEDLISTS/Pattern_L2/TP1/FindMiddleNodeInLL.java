@@ -10,10 +10,15 @@ public class FindMiddleNodeInLL {
         ListNode(int x) { val = x; next = null; }
     }
 
-    public ListNode getMidFirstNodeSecondHalf(ListNode start)
+    // if we compare both the codes below
+    //the resultant nodes returned from both function have a difference of one
+    //to obtain this difference start second pointer one node ahead of first pointer
+
+
+    public ListNode getMidFirstNodeSecondHalf(ListNode head)
     {
-        ListNode slow =start;
-        ListNode fast=start;
+        ListNode slow =head;
+        ListNode fast=head;
 
         while(fast!= null && fast.next != null)
         {
@@ -23,10 +28,10 @@ public class FindMiddleNodeInLL {
 
         return slow;
     }
-    public ListNode getMidEndofFirstHalf(ListNode h)
+    public ListNode getMidEndofFirstHalf(ListNode head)
     {
-        ListNode slow=h;
-        ListNode fast =h.next;
+        ListNode slow=head;
+        ListNode fast =head.next;
 
         while(fast!=null && fast.next!=null){
             slow=slow.next;
@@ -35,4 +40,6 @@ public class FindMiddleNodeInLL {
 
         return slow;
     }
+
+
 }

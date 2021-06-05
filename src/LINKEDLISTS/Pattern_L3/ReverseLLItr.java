@@ -19,7 +19,7 @@ public class ReverseLLItr {
 
         while(curr!=null)
         {
-             ListNode nextOfCurr=curr.next;
+            ListNode nextOfCurr=curr.next;
 
             curr.next=justBeforeCurr;
 
@@ -28,7 +28,10 @@ public class ReverseLLItr {
             curr=nextOfCurr;
 
         }
-
+        //When curr points to null
+        // justBeforeCurr will point to tail node
         return justBeforeCurr;
     }
+
+
 }

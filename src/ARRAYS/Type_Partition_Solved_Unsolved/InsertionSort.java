@@ -9,8 +9,7 @@ public class InsertionSort {
             int currElementToBeSorted = arr[firstIdx_UnsolvedSegment];
 
             //Initialize Pointer j from last index of Sorted/Solved Segment
-            int lasIdx_SolvedSegment= firstIdx_UnsolvedSegment - 1;
-            int j = lasIdx_SolvedSegment;
+            int j = firstIdx_UnsolvedSegment - 1;
 
 			/* Move elements of arr[0..i-1], that are
 			greater than currElementToBeSorted, to one position ahead
@@ -20,7 +19,7 @@ public class InsertionSort {
                 j = j - 1;
             }
             //when we break out of loop above
-            //at index j we have element which is smaller(or equal) to currElementToBeSorted
+            //at index j we have element which is smaller to currElementToBeSorted
             arr[j + 1] = currElementToBeSorted;
         }
     }

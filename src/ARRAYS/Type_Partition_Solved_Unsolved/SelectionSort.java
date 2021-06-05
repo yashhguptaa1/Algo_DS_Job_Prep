@@ -4,7 +4,6 @@ public class SelectionSort {
 
     void selectionSort(int arr[], int n)
     {
-        //code here
 
         for(int lastIdx_SolvedSegment = 0; lastIdx_SolvedSegment < n-1; lastIdx_SolvedSegment++)
         {
@@ -18,6 +17,12 @@ public class SelectionSort {
                 if(arr [j] < arr[minIdx])
                     minIdx = j;
             }
+
+            //Our left subarray is a sorted segment
+            //From this sorted segment pick last ele which would be bigger than
+            //all ele of sorted segment
+            //if there is an ele in unsorted segment which is smaller than this last element
+            // we swap so smaller ele becomes part of sorted subaarray
             swap( arr , lastIdx_SolvedSegment ,minIdx);
         }
 

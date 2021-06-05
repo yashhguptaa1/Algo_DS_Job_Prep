@@ -10,19 +10,23 @@ public class PalindromeLinkedList {
         ListNode(int x) { val = x; next = null; }
     }
 
-
     public int lPalin(ListNode head) {
 
+        //Break the given LL into two from middle
         ListNode middleNode=getMidEndofFirstHalf(head);
-
         ListNode head2=middleNode.next;
         middleNode.next=null;
+
+        //Reverse the second half of LL obtained after breaking
         head2=revLL(head2);
 
+        //Set pointers on both the list
         ListNode t1=head;
         ListNode t2=head2;
 
         //Concept used in Pattern L2.TP3
+        // now check if value are same in both lists
+        //for odd list one extra node is there which not needed to be checked
         while(t1 !=null && t2 != null)
         {
             if(t1.val != t2.val)
@@ -72,3 +76,14 @@ public class PalindromeLinkedList {
     }
 
 }
+/*
+Given a singly linked list, determine if its a palindrome. Return 1 or 0 denoting if its a palindrome or not, respectively.
+
+Notes:
+
+Expected solution is linear in time and constant in space.
+For example,
+
+List 1-->2-->1 is a palindrome.
+List 1-->2-->3 is not a palindrome.
+ */

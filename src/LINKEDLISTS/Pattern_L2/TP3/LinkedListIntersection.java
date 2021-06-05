@@ -18,7 +18,6 @@ public class LinkedListIntersection {
         ListNode t1= a;
         ListNode t2 =b;
 
-
         if(s1>s2)
         {
             int diff=s1-s2;
@@ -44,11 +43,9 @@ public class LinkedListIntersection {
             {
                 return t1;
             }
-
             t1=t1.next;
             t2=t2.next;
         }
-
         return null;
     }
 
@@ -62,7 +59,6 @@ public class LinkedListIntersection {
             count++;
             t=t.next;
         }
-
         return count;
     }
 }

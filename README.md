@@ -31,3 +31,26 @@ The Hard and Medium Level topic will generally be solved by combination of these
     test cases passed.
     Now Optimize your code using the above steps
 
+
+One way to note how loop works ,that is where it would point
+after exiting without dry run is simple
+
+check the breaking condition of loop
+
+for example
+
+for(int i=0 ; i<n;i++)
+{
+}
+
+basically when loop exits iterator i will point to n
+
+Linked list considering 0 based indexing
+
+Node curr = head
+int k = 4;
+while(k -- > 0 && curr!=null)
+{
+curr=curr.next;
+}
+after exiting loop
