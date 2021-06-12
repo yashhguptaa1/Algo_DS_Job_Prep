@@ -1,0 +1,49 @@
+Type 1 : It means work on the way up (recursive tree diag) till you hit base case.
+       : It's structure is similar to that of tail recursion
+
+1) Start from main call
+
+2) BASE CASE
+    It is implemented only to stop recursion
+    and pop out all recursive calls from Call Stack
+
+3) In PRE PHASE
+    i)Questions in Print_in_PrePhase
+        Print the ans obtained so far as you go up
+        (PRINT THE ARGUMENT VALUE PASSED IN RECURSIVE CALL)
+
+    ii)Questions in Return_in_PrePhase
+        We return the answer in PrePhase as soon as we get the desired answer(BY COMPARISON)
+        and exit from Call Stack
+
+4) RECURSIVE CALL
+    Make recursive call reducing search space everytime
+    can also make multiple calls like in
+    Print Binary Tree
+    BinarySearch
+
+5) RETURN
+    i) if return type is void we skip the last return statement
+    ii) if return type is not void we write return the next NEXT RECURSIVE CALL
+     (passing updated argument in it which reduces search space every time)
+
+
+General Code Structure
+
+public static void funcRec ( int n)
+    {
+        1: BASE CASE
+            2: PRE PHASE WORK
+            if ()
+                do this
+                        
+        3: Recursive call                  
+        funcRec (n+1);
+    }
+
+
+Keywords in question
+1) Display
+2) Print
+3) Find First
+

@@ -1,2 +1,8 @@
-Stack as a replacement for Code that uses Recursion
-to change them into iterative Code
+These Questions use Stack to either
+
+1) Reverse any Result or DS( like Strings, LinkedLists)
+    As Stack Uses Last In First Out Principle
+
+2) Stack as a replacement for Code that uses Recursion
+    to change them into iterative Code
+    Like InorderTraversal Of Binary Tree

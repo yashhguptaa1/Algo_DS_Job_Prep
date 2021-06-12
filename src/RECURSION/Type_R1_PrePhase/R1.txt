@@ -1,11 +1,13 @@
-Type 1 : It means work on the way up (recursive tree diag) till you hit base case.
+Type R1: It means work on the way up (recursive tree diag) till you hit base case.
+       : which means you write comparison logic as your recursive stack goes on filling
        : It's structure is similar to that of tail recursion
 
 1) Start from main call
 
 2) BASE CASE
-    It is implemented only to stop recursion
-    and pop out all recursive calls from Call Stack
+    : It is implemented only to stop recursion
+      and pop out all recursive calls from Call Stack
+    : To return ans on wrong test cases or empty
 
 3) In PRE PHASE
     i)Questions in Print_in_PrePhase
@@ -41,9 +43,13 @@ public static void funcRec ( int n)
         funcRec (n+1);
     }
 
+When to use
+1) When you dont have traverse the whole search space
+2) You want to exit as soon as you get your answer
 
 Keywords in question
 1) Display
 2) Print
 3) Find First
+
 
