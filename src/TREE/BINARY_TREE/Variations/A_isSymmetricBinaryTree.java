@@ -15,8 +15,6 @@ public class A_isSymmetricBinaryTree {
         return util(root.left,root.right);
     }
 
-
-
     // Trying preorder approach
 
     public boolean util(TreeNode ptr1,TreeNode ptr2)

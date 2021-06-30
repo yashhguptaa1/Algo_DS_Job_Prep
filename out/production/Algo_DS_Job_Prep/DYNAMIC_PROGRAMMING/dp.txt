@@ -1,0 +1,18 @@
+When thinking of Recursive solution for DP questions
+Think in Postorder manner
+{ first recursive calls then work}
+Why
+because In dp we want to break main problem into small similar subproblems
+FIRST SOLVE THESE SUBPROBLEMS { POSTORDER TRAVERSAL}
+
+
+1) In PREORDER PHASE
+    Check if you have already stored the answer
+    As we go depthvise in recursive tree diagram ,
+    if we see the same subtree again we must check if we have stored
+    answer of that subtree before traversing it (preorder)
+
+2) Recursive call Postorder manner
+
+3) In PostOrder Phase
+    Store answer to current subproblem

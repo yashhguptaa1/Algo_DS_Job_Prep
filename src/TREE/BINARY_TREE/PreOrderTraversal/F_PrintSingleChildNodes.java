@@ -1,6 +1,7 @@
 package TREE.BINARY_TREE.PreOrderTraversal;
 import TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.TreeNode;
 
+
 public class F_PrintSingleChildNodes {
 
     public static void printSingleChildNodes(TreeNode node, TreeNode parent){
@@ -21,3 +22,6 @@ public class F_PrintSingleChildNodes {
     }
 
 }
+/*
+The function is expected to print in separate lines, all such nodes which are only child of their parent.
+ */

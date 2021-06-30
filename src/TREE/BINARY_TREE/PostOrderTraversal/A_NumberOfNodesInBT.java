@@ -11,17 +11,14 @@ public class A_NumberOfNodesInBT {
     //I have
     //RootNode and Lst and Rst
     //Size of tree will be
-    //size of lst + size of rst +  current node size which is 1 (node)
-
-
-    //Basically i want to obtain size of lst and rst first
-    //then add rootnode to it
-    //USE POSTORDER TRAVERSAL
-
+    //size of lst + size of rst + size of rootnode which is 1 (node)
     //return the size
 
-    //RECURSION WITH RETURN TYPE of INT
-    //Type R3.P2 : Work in PostPhase
+    //Basically i want to obtain size of lst and rst first
+    //Possible by POSTORDER TRAVERSAL
+    //then add rootnode to it
+
+    //Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
 
     public static int size(TreeNode node) {
         if(node == null) return 0;

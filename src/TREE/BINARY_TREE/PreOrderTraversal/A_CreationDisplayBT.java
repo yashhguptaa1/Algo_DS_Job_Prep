@@ -23,7 +23,6 @@ public class A_CreationDisplayBT {
           left=lcn;
           right=rcn;
       }
-
   }
 
     public static class Pair {
@@ -36,7 +35,8 @@ public class A_CreationDisplayBT {
         }
     }
 
-    // USES TYPE R1 : PRINT IN PREPHASE
+    // USES TYPE R1 : PRINT ANS IN PREPHASE
+
     public static void display(TreeNode root) {
         if (root == null)
             return;
@@ -50,10 +50,10 @@ public class A_CreationDisplayBT {
         display(root.right);
     }
 
-
-    //0 -> Process Left child
-    //1 -> Process right child
-    //2 -> Pop the current node from stack
+    //For p.state if
+    //0 -> Process Left child = Pre
+    //1 -> Process right child= In
+    //2 -> Pop the current node from stack = Post
     public static TreeNode construct(Integer[] arr) {
 
         //Make first element of array as ROOT of BT
@@ -63,13 +63,13 @@ public class A_CreationDisplayBT {
         Stack<Pair> st = new Stack<>();
         st.push(new Pair(root, 0));
 
-        //To travers inout array
+        //To traverse input array
         int indx = 0;
+
         while (st.size() > 0) {
             Pair p = st.peek();
             if (p.state == 0) {
-                // left child processing
-                indx++; //get next node
+                indx++;
                 if (arr[indx] != null) {
 
                     //Since TreeNode constructor initializes
@@ -81,20 +81,21 @@ public class A_CreationDisplayBT {
                     p.node.left = nn;
                     st.push(new Pair(nn, 0));
                 }
-                // if no left child that is if we get NULL
-                //increment state so that we can check child in right half
+
+                // if no more left child that is if we get NULL
+                //increment state so that we can now start adding child in right half
                 p.state++;
             } else if (p.state == 1) {
-                // right child processing
-                indx++;//get next node
+                indx++;
                 if (arr[indx] != null) {
                     TreeNode nn = new TreeNode(arr[indx]);
                     p.node.right = nn;
                     st.push(new Pair(nn, 0));
                 }
 
-                // if no right child also that is if we get NULL
+                // if no more right child or if we get NULL
                 //increment state so that we can pop the curr Node
+                //denotes for curr node all its child have been added
                 p.state++;
             } else {
                 // pop out node-pair from stack
@@ -112,7 +113,6 @@ public class A_CreationDisplayBT {
         TreeNode root = construct(arr);
 
         display(root);
-
 
     }
 }

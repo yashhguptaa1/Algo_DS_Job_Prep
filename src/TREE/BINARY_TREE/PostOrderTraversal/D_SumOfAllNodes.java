@@ -8,23 +8,21 @@ import static TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.construct;
 
 public class D_SumOfAllNodes {
 
+    //Cant use P1 (work in Prephase , Preorder traversal) as
+    //will have to change function call ,need extra argument to track ans
+    //cannot write basecase to exit from recursion only after visiting every node
+    // so will have to write many checks
+
+    //If you notice carefully ,The output of PostOrder Traversal
+    //It Prints the root Node in the end after visiting all nodes
+    //that is it ensures automatically that recursion exits after visiting every node
+    //the only base case we have to write is to return 0 if we point to null node
+
     //Sum of all nodes can be written as
-//Sum of root.val + sum of lst nodes.val + sum of rst nodes.val
-
-//From this I can deduce it Belongs to RECURSION.TYPE R3
-
-//Cant use P1 (work in Prephase , Preorder traversal) as
-//will have to change function call ,need extra argument to track ans
-//cannot write basecase to exit from recursion only after visiting every node
-// so will have to write many checks
-
-
-//If you notice carefully ,The output of PostOrder Traversal
-//It Prints the root Node in the end after visiting all nodes
-//that is it ensures automatically that recursion exits after visiting every node
-//the only base case we have to write is to return 0 if we point to null node
-
-// Use P2
+    //Sum of root.val + sum of lst nodes.val + sum of rst nodes.val
+    //Possible by POSTORDER TRAVERSAL
+    //From this I can deduce it Belongs to
+    //Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
 
     public static int sum(TreeNode node) {
         if(node == null) return 0;

@@ -46,31 +46,36 @@ public class B_PostTraversalRecItr {
             Pair p = st.peek();
             if(p.state == 0) {
 
-                //In below line leaf nodes will be appended to result
-                //we wont store them in stack
                 //pre.add(p.node.data);
 
-                //Increment iterative pointer
-                p.state++;
-
+                //if Curr Node has left child add it
                 if(p.node.left != null) {
                     st.push(new Pair(p.node.left, 0));
                 }
-            } else if(p.state == 1) {
+
+                //For curr node as left child has been already stored
+                //Increment state so that next time right child is stored for curr Node
+                p.state++;
+            }
+            else if(p.state == 1) {
 
                 //in.add(p.node.data);
 
-                p.state++;
                 if(p.node.right != null) {
                     st.push(new Pair(p.node.right, 0));
                 }
-            } else {
+
+                //For curr node as right child has been already stored
+                //Increment state so that next time we pop out curr Node as its lst and rst have been stored
+                p.state++;
+            }
+            else {
 
                 post.add(p.node.val);
-
                 st.pop();
             }
         }
         return post;
     }
 }
+

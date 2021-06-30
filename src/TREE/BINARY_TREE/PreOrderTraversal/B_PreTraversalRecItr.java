@@ -49,6 +49,7 @@ public class B_PreTraversalRecItr {
             //the stack keeps the history of nodes that we have traversed and need searching
             while(currPtr != null)
             {
+                //As and when a new node is traversed add in ans list
                 preorder.add(currPtr.val);
                 st.push(currPtr);
                 currPtr=currPtr.left;

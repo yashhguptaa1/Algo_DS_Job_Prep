@@ -1,0 +1,49 @@
+
+In Question such as D_TiltBinaryTree
+where changing return type is not possible
+
+    public int findTilt(TreeNode root) {
+
+        int oneVal[]=new int[1];
+        int call=tiltHelper(root,oneVal);
+        return oneVal[0];
+    }
+    public int tiltHelper(TreeNode node,int v[])
+    {
+        if(node == null )
+            return 0;
+
+        int lsum =tiltHelper(node.left,v);
+        int rsum =tiltHelper(node.right,v);
+
+        v[0] += Math.abs(lsum - rsum);  This line is extra addition to sumofallnodes code
+
+        int sumOfAllNodesIncludingCurrNode = lsum + rsum + node.val;
+        return sumOfAllNodesIncludingCurrNode;
+    }
+
+
+We make a custom class to return two values from same function
+
+static class DiaPair {
+        int dia;
+        int ht;
+
+        public DiaPair() {
+            this.dia = 0;
+            this.ht = -1;
+        }
+    }
+
+    public DiaPair diameter2(TreeNode root) {
+            if(root == null) return new DiaPair();
+
+            DiaPair lres = diameter2(root.left);
+            DiaPair rres = diameter2(root.right);
+
+            DiaPair mres = new DiaPair();
+
+            mres.ht = Math.max(lres.ht, rres.ht) + 1; //Notice we calculate height here only
+            mres.dia = Math.max(lres.ht + rres.ht + 2, Math.max(lres.dia, rres.dia));
+            return mres;
+        }

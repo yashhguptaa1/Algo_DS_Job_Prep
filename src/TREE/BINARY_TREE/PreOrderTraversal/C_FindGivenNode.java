@@ -2,10 +2,9 @@ package TREE.BINARY_TREE.PreOrderTraversal;
 
 import TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.TreeNode;
 
-//USES PRINCIPAL OF
-// RECURSION.DivideAndConquer.BinarySearch
-public class C_FindGivenNode {
+//USES RECURSION.Type_R1_PrePhase.Work_in_PrePhase.Return_Ans_in_BaseCase
 
+public class C_FindGivenNode {
 
     public static boolean find(TreeNode node, int data) {
 
@@ -15,16 +14,17 @@ public class C_FindGivenNode {
 
         if(node.val == data) return true;
 
-         boolean res = false;
+        boolean res = false;
 
-         res = find(node.left, data);
-         // if we get true from left subtree then
+        res = find(node.left, data);
+
+        // if we get true from left subtree then
         // || operator
-        //would not execute seccond statemment
-        //iffirst statement is turue
-         res = res || find(node.right, data);
+        //would not execute second statement
+        //if first statement is true
+        res = res || find(node.right, data);
 
-         return res;
+        return res;
 
     }
 

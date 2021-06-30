@@ -8,16 +8,14 @@ import static TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.construct;
 
 public class C_MaxValueFromAllNodes {
 
-    // want to exit only after traversing all nodes inculding root : Postorder traversal
-// find max in lst and store it
-//find max in rst and store it
-//compare it with root.val
-//the maximum from these three is the max val in BT
+    // want to exit only after traversing all nodes including root : Postorder traversal
+    // find max in lst and store it
+    //find max in rst and store it
+    //compare it with root.val
+    //the maximum from these three is the max val in BT
 
-//RECURSION WITH RETURN TYPE of INT
-//Type R3.P2
+    //Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
 
-    // CONSIDERING OUR TREE STARTS FROM TOP TO BOTTOM
     public static int max(TreeNode node) {
         if(node == null) return Integer.MIN_VALUE;
 

@@ -8,10 +8,10 @@ import static TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.construct;
 
 public class E_Height_DepthOfBT {
 
-
     //Considering Leaf Node is at height 0
-    //If Given that Leaf Node is at level 1 then find levels then
-    //change base case to return 0
+    //Or we can say Root Node is at Level 0
+    //The null node will be at height -1
+    //change base case to return -1
     public static int height(TreeNode node) {
         if(node == null) return -1;
 
@@ -20,12 +20,13 @@ public class E_Height_DepthOfBT {
 
         int maxNumberOfLvlsAfterCurrNode = Math.max(LevelsInLeftBTafterCurrNode,LevelsInRightBTafterCurrNode);
 
-        //from whichever side we get maximum depth add currnode to that side to update
-        //resultant depth
+        //from whichever side we get maximum Height
+        // add currnode to that side to update
+        //resultant Height
         return maxNumberOfLvlsAfterCurrNode + 1;
     }
 
-    // using Recursion.Type R3.P2
+    //Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
     public int maxDepth(TreeNode root) {
 
         // as Leaf node is at depth 1
@@ -66,14 +67,37 @@ public class E_Height_DepthOfBT {
     }
 }
 /*
-Sample Input
-19
-50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n
+104. Maximum Depth of Binary Tree
+Easy
 
-Sample Output
-9
-448
-87
-3
+
+Given the root of a binary tree, return its maximum depth.
+
+A binary tree's maximum depth is the number of nodes
+along the longest path from the root node down to the farthest leaf node.
+
+Example 1:
+
+
+Input: root = [3,9,20,null,null,15,7]
+Output: 3
+Example 2:
+
+Input: root = [1,null,2]
+Output: 2
+Example 3:
+
+Input: root = []
+Output: 0
+Example 4:
+
+Input: root = [0]
+Output: 1
+
+
+Constraints:
+
+The number of nodes in the tree is in the range [0, 104].
+-100 <= Node.val <= 100
 
  */

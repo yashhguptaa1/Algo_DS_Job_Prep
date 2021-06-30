@@ -1,0 +1,12 @@
+
+Every problem has
+
+1) DECIDE ENDPOINTS
+    what can be Low Point of Solution Range
+    what can be High Point of Solution Range
+
+2) DIVINDING FACTOR
+    How can we divide search space into two
+    such that we can discard one of the search space
+
+3)

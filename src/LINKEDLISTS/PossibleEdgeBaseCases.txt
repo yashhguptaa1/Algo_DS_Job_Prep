@@ -33,5 +33,5 @@
     iii)two sized list
 
     TO CHECK If YOUR CODE WORKS CORRECTLY
-    iv) even sized list
+    iv)even sized list
     v)odd sized list

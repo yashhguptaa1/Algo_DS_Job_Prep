@@ -54,3 +54,14 @@ while(k -- > 0 && curr!=null)
 curr=curr.next;
 }
 after exiting loop
+
+The Topics Should be Revised In order
+1) Recursion
+2) Stacks
+3) Linked List
+4) Binary Tree
+5) Divide and Conquer(Binary Search)
+6) Binary Search Tree
+7) Arrays
+8) Heaps
+9) HashMaps

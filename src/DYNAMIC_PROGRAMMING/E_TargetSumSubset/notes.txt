@@ -1,0 +1,18 @@
+1)Why cant we take sumSoFar as second parameter instead of
+    Target param in which we subtract current index value and send in next recursive call
+    : SumSoFar will be solved during PreOrder Phase , and as we know there is never repeatition in Preorder Phase
+
+2) AS you can see recursive tree diagram we can note that when we check Repeated Nodes
+    Their two parameters are checked for repetition
+    index and target
+    : Thus this gives intution to create 2d array for DP
+    : Since we have to return boolean value
+    : Thus create Boolean 2d Array
+
+3) Also note the recursive tree diagram
+    : each level denote current index
+    : branches denote two options and can return (true and false)respectively
+    : Thus we can store True or False in Boolean dp
+
+4) ROWVISE : EACH LEVEL : CURRENT INDEX
+5) COLUMNVISE : COMPARE PARENT - CHILD NODE : TARGET TO ACHIEVE

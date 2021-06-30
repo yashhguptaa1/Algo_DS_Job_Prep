@@ -6,7 +6,8 @@ import TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.TreeNode;
     //because these nodes will act as child nodes of the new node that we append
     //aur post phase me jo current node hoga vo parent bnjayega new node ka
 
-    //Use Type R2:Work in PostPhase : Multiple Recursive calls
+
+    // Uses RECURSION.Type_R2_PostPhase.Work_ReturnAns_in_PostPhase.MultipleRecCall
 
 public class I_TransBackFromLeftCloned {
 
