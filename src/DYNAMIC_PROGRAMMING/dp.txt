@@ -19,3 +19,20 @@ FIRST SOLVE THESE SUBPROBLEMS { POSTORDER TRAVERSAL}
 
 
 Dry run climbstairs recursive and goldmine recursive coin change permutation countbinarystrings rec
+
+p1
+fibonacci
+climbstairs
+countencodings
+
+p2
+targetsumsubset
+01knapsack
+
+p3
+unboundedknapsack
+coinchangecombination
+
+two important points
+agr question me min max he toh try to optimize through greedy
+agr kbhi recursion me fasso, toh PRE,IN,POST me print lgado

@@ -16,3 +16,6 @@ FIRST SOLVE THESE SUBPROBLEMS { POSTORDER TRAVERSAL}
 
 3) In PostOrder Phase
     Store answer to current subproblem
+
+
+Dry run climbstairs recursive and goldmine recursive coin change permutation countbinarystrings rec

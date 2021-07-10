@@ -15,3 +15,10 @@ ValidateSequenceStack
 In these questions we do track previous states but when we perform
 comparison
 WE ELIMINATE THE PREVIOUS STATES
+
+CONCLUSION
+When doing stack questions
+1) Think of what i can STORE(PUSH) in stack (as previously traversed states)
+2) Think of condition to compare previous states(PEEK) to current state
+3) If comparison satisfied (POP) from stack ,
+   i) Think whether popped element can be part of final ans or it should be discarded

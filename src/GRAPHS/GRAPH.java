@@ -7,87 +7,95 @@ public class GRAPH {
 
     public static class Edge {
 
-        public int src;
         public int nbr;
         public int wt;
 
-        public Edge(int src, int nbr, int wt) {
-            this.src = src;
+        public Edge(int nbr, int wt) {
             this.nbr = nbr;
             this.wt = wt;
         }
     }
 
-    //Uni Directional Graph
+//................................................................................................................
+    //USING ARRAYS OF ARRAYLIST
 
-    //Bi Directional Graph
+    public static ArrayList<Edge>[] createEmptyGraph(int tVertices) {
 
-    public static void addEdge(ArrayList<Edge>[] graph, int src, int nbr, int wt) {
-        graph[src].add(new Edge(src, nbr, wt));
-        graph[nbr].add(new Edge(nbr, src, wt));
+        ArrayList<Edge>[] graph = new ArrayList[tVertices];
+        for (int i = 0; i < tVertices; i++) {
+            graph[i] = new ArrayList<>();
+        }
+        return graph;
     }
+    //BI DIRECTIONAL GRAPH
+    public static void addEdge(ArrayList<Edge>[] graph, int src, int nbr, int wt) {
+        graph[src].add(new Edge(nbr, wt));
+        graph[nbr].add(new Edge(src, wt));
+    }
+
     public static void display(ArrayList<Edge>[] graph) {
         for(int v = 0; v < graph.length; v++) {
             System.out.print("[" + v + "] -> ");
             for(int n = 0; n < graph[v].size(); n++) {
                 Edge e = graph[v].get(n);
-                System.out.print("[" + e.src + "-" + e.nbr + " @ " + e.wt + "], ");
-            }
-            System.out.println();
-        }
-    }
-    public static ArrayList<Edge>[] createEmptyGraph(int v) {
-
-        // n-> number of vertices
-        ArrayList<Edge>[] graph = new ArrayList[v];
-        for (int i = 0; i < v; i++) {
-            graph[i] = new ArrayList<>();
-        }
-        return graph;
-    }
-
-    //Using HashMap
-
-    public static void hashedAddEdge(HashMap<Integer,ArrayList<Edge>>graph, int src, int nbr, int wt) {
-        graph.get(src).add(new Edge(src, nbr, wt));
-        graph.get(nbr).add(new Edge(nbr, src, wt));
-    }
-
-    public static void hashedDisplay(HashMap<Integer,ArrayList<Edge>>graph) {
-
-        for (Map.Entry<Integer,ArrayList<Edge>> entry : graph.entrySet())
-        {
-            System.out.print("[" + entry.getKey() + "] -> ");
-
-            for(Edge e : entry.getValue())
-            {
-                System.out.print("[" + e.src + "-" + e.nbr + " @ " + e.wt + "], ");
+                System.out.print("[" + e.nbr + " @ " + e.wt + "], ");
             }
             System.out.println();
         }
     }
 
-    public static HashMap<Integer,ArrayList<Edge>>createHashedGraph(int tEdges,ArrayList<Integer>allVertices,ArrayList<Integer>correspondingNbrs,ArrayList<Integer>correspondingWts)
+    //Find edge between srcVERTEX and nbrVERTEX
+    //TC: O(V)
+    public static int findEdge(ArrayList<Edge>[] graph, int src, int nbr)
     {
-        HashMap<Integer,ArrayList<Edge>> graph=new HashMap<>();
+        int idx= -1;
 
-        for(int i = 0; i < tEdges; i++){
+        //go at index where srcVERTEX is present : graph[src]
+        //Loop over all Edges from srcVERTEX
+        //search for given nbrVertex in loop
+        //for(Edge e:graph[src])
+        for(int i=0;i<graph[src].size();i++)
+        {
+            if(graph[src].get(i).nbr == nbr)
+            {
+                idx = i;
+                break;
+            }
+        }
+        return idx;
+    }
 
-            graph.put(allVertices.get(i),new ArrayList<>());
-            graph.put(correspondingNbrs.get(i),new ArrayList<>());
+    //Since we have bidirectional graph to connection between two VERTICES
+    //we have to remove two edges between given two VERTEX
+    //TC : O(V+E)
+    public static void removeEdge(ArrayList<Edge>[] graph, int src, int nbr)
+    {
+        int idx1 = findEdge(graph,src,nbr);    //TC: O(V)
+        int idx2 = findEdge(graph,nbr,src);    //TC: O(V)
+
+        if(idx1!= -1 && idx2!= -1)
+        {
+            graph[src].remove(idx1);            //TC: O(E)
+            graph[nbr].remove(idx2);            //TC: O(E)
         }
 
+    }
 
-        for(int i = 0; i < tEdges; i++){
+    //We start deleting ARRAYLIST from last index
+    //cauz when we delete from end the size of list decreases
+    //our pointer in each iteration points to last element
 
-            int v1=allVertices.get(i);
-            int v2=correspondingNbrs.get(i);
-            int wt=correspondingWts.get(i);
-            hashedAddEdge(graph,v1,v2,wt);
-
+    //To delete vertex delete all its edges but dont remove the vertex itself
+    //as in our graph
+    //Index of Array corresponds to Vertex Number
+    public static void removeVertex(ArrayList<Edge>[] graph, int src)
+    {
+        for(int i = graph[src].size()-1; i>=0;i--)
+        {
+            int nbr = graph[src].get(i).nbr;
+            removeEdge(graph,src,nbr);
         }
-
-        return graph;
+        graph[src].add(new Edge(-1,-1));
     }
 
 
@@ -100,33 +108,25 @@ public class GRAPH {
 
         ArrayList<Edge>[] graph=createEmptyGraph(tVertices);
 
-        ArrayList<Integer>allVertices=new ArrayList<>();
-        ArrayList<Integer>correspondingNbrs=new ArrayList<>();
-        ArrayList<Integer>correspondingWts=new ArrayList<>();
-
         for(int i = 0; i < tEdges; i++){
             String[] parts = inp.readLine().split(" ");
 
             int v1 = Integer.parseInt(parts[0]);
-            allVertices.add(v1);
-
             int v2 = Integer.parseInt(parts[1]);
-            correspondingNbrs.add(v2);
-
             int wt = Integer.parseInt(parts[2]);
-            correspondingWts.add(wt);
 
             addEdge(graph,v1,v2,wt);
 
         }
 
+        System.out.println("GRAPH as Adjacency List");
         display(graph);
 
-        HashMap<Integer,ArrayList<Edge>> hashedGraph=createHashedGraph(tEdges,allVertices,correspondingNbrs,correspondingWts);
+        removeVertex(graph,3);
 
-        System.out.println();
+        System.out.println("GRAPH as Adjacency List");
+        display(graph);
 
-        hashedDisplay(hashedGraph);
 
 //        int src = Integer.parseInt(inp.readLine());
 //        int dest = Integer.parseInt(inp.readLine());
