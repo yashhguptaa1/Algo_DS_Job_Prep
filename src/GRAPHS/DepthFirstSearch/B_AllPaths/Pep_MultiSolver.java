@@ -1,6 +1,5 @@
 package GRAPHS.DepthFirstSearch.B_AllPaths;
 
-//https://www.pepcoding.com/resources/online-java-foundation/graphs/mutilsovler-graph-official/ojquestion
 import java.io.*;
 import java.util.*;
 
@@ -29,17 +28,22 @@ public class Pep_MultiSolver {
         }
     }
 
+
     static String spath;
-    static Integer spathwt = Integer.MAX_VALUE;
+    static Integer spathwt = (int)1e8; // Integer.MAX_VALUE;
     static String lpath;
-    static Integer lpathwt = Integer.MIN_VALUE;
+    static Integer lpathwt = -(int)1e8; //Integer.MIN_VALUE;
     static String cpath;
-    static Integer cpathwt = Integer.MAX_VALUE;
+    static Integer cpathwt = (int)1e8; //Integer.MAX_VALUE;
     static String fpath;
-    static Integer fpathwt = Integer.MIN_VALUE;
+    static Integer fpathwt = -(int)1e8; //Integer.MIN_VALUE;
     static PriorityQueue<Pair> pq = new PriorityQueue<>();
     public static void multisolver(ArrayList<Edge>[] graph, int src, int dst, boolean[] vis,
                                    int factor, int k, String psf, int wsf) {
+
+        //Since DFS touches leaves for each path
+        // we dont have to check when we are looping on neighbors of each vtx
+        //we check all conditions for each path obtained
         if(src == dst) {
             // smallest path
             if(wsf < spathwt) {
@@ -60,7 +64,7 @@ public class Pep_MultiSolver {
             }
             // floor path using factor
             if(wsf < factor) {
-                if(fpathwt < wsf) {
+                if(wsf > fpathwt ) {
                     fpathwt = wsf;
                     fpath = psf;
                 }
@@ -141,8 +145,9 @@ Sample Input
 40
 3
 Sample Output
-0123456
-012346
-03456
-0346
+Path with smallest weight = 0123456@38
+Path with largest weight = 0346@50
+Just Larger Path than 40 = 03456@48
+Just Smaller Path than 40 = 0123456@38
+3th largest path = 012346@40
  */

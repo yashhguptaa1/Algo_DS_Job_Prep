@@ -6,11 +6,11 @@ import java.util.*;
 import GRAPHS.GRAPH.*;
 import static GRAPHS.GRAPH.*;
 
-
+//TC : O(V ^ 2)
 public class Pep_Getconnectedcompo {
 
     //dfs to ensure each vertex is visited only once
-    //TC: O(E+V)
+
     public static void getConnectedComp(ArrayList<Edge>[] graph, int src, boolean[] vis, ArrayList<Integer> comp,int count[]) {
         vis[src] = true;
         comp.add(src);
@@ -22,23 +22,30 @@ public class Pep_Getconnectedcompo {
                 getConnectedComp(graph, nbr, vis, comp,count);
             }
         }
+        //we dont unmark here because a vtx can be part of only 1 component
+        // so we must not visit same vtx again
     }
 
     public static ArrayList<ArrayList<Integer>> getConnectedComponents(ArrayList<Edge>[] graph,int tVertices,ArrayList<Integer>allcounts) {
         ArrayList<ArrayList<Integer>> comps = new ArrayList<>();
         boolean[] vis = new boolean[tVertices];
+        int components = 0;
 
-        for(int v = 0; v < tVertices; v++) {
+        for(int v = 0; v < tVertices; v++) {// TC: O(V)
             if(vis[v] == false) {
 
                 ArrayList<Integer> comp = new ArrayList<>();
                 int count[]=new int[1];
-                getConnectedComp(graph, v, vis, comp,count);
+
+                getConnectedComp(graph, v, vis, comp,count);//TC: O(E+V)
+                //jitni baar dfs ko call lgegi utne hi components honge
+                components++;
                 allcounts.add(count[0]);
                 comps.add(comp);
             }
         }
 
+        System.out.println(components);
         return comps;
     }
 

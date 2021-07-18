@@ -16,6 +16,9 @@ public class TopologicalSort {
     // ~~~~~~Topological sort-> valid for directed and acyclic graph~~~~~~~~
     public static void dfs_topo(ArrayList<ArrayList<directedEdge>> graph, int src, boolean[] vis, Stack<Integer> st) {
 
+        //dfs we use boolean visited array
+        // inplace of base case to stop recursion
+
         vis[src] = true;
         for(directedEdge e : graph.get(src)) {
             int nbr = e.nbr;
@@ -33,6 +36,9 @@ public class TopologicalSort {
         boolean[] vis = new boolean[n];
 
         Stack<Integer> st = new Stack<>();
+        // since its a directed graph it might not be possible to visit every vtx
+        //from starting srcvtx
+
         for(int v = 0; v < n; v++) {
             if(vis[v] == false) {
                 dfs_topo(graph, v, vis, st);

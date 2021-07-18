@@ -7,15 +7,34 @@ FIRST SOLVE THESE SUBPROBLEMS { POSTORDER TRAVERSAL}
 
 
 1) In PREORDER PHASE
-    Check if you have already stored the answer
-    As we go depthvise in recursive tree diagram ,
-    if we see the same subtree again we must check if we have stored
-    answer of that subtree before traversing it (preorder)
+    Check if you have already stored the answer,
+    That is as we go depthvise in recursive tree diagram ,
+    If we see the same subtree again ( we have to solve same subproblem again)
+    we must check if we have stored (solved) answer of that subtree before
+    traversing it again( before solving the subproblem again).
 
 2) Recursive call Postorder manner
 
 3) In PostOrder Phase
-    Store answer to current subproblem
-
+    If the current subproblem has not been solved before
+    solve the current subproblem and store its result in storage( dp[])
+    so that the answer to this subproblem can be accessed in future in constant time.
 
 Dry run climbstairs recursive and goldmine recursive coin change permutation countbinarystrings rec
+
+p1
+fibonacci
+climbstairs
+countencodings
+
+p2
+targetsumsubset
+01knapsack
+
+p3
+unboundedknapsack
+coinchangecombination
+
+two important points
+agr question me min max he toh try to optimize through greedy
+agr kbhi recursion me fasso, toh PRE,IN,POST me print lgado

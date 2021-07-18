@@ -1,6 +1,5 @@
 package GRAPHS.DepthFirstSearch.A_hasPath;
 
-//https://www.pepcoding.com/resources/online-java-foundation/graphs/has-path-official/ojquestion
 
 import java.io.*;
 import java.util.*;
@@ -35,6 +34,24 @@ public class Pep_hasPath {
         return false;
     }
 
+    public static boolean hasPathBtr(ArrayList <Edge> graph[],int src,int dst,boolean vis[] )
+    {
+        if(src == dst)
+            return true;
+
+        //Only Mark since need to check only single path
+        vis[src]=true;
+        boolean res=false;
+
+        for(Edge e : graph[src])
+        {
+            //For all unvisited neighbors
+            if(vis[e.nbr] == false) {
+                res = res || hasPathBtr(graph, e.nbr, dst, vis);
+            }
+        }
+        return res;
+    }
     public static void main(String[] args) throws IOException {
 
         BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));

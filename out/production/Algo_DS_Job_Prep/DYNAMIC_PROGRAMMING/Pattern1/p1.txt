@@ -1,0 +1,23 @@
+1)LEVEL = NODES
+    i) nth level is same as Answer (Result) of nth subproblem
+    or answerSoFar for nth subproblem
+
+    ii) int countPaths = 0;
+        Used in PREORDER Phase
+        to store answerSoFar for nth subproblem
+
+
+2) OPTIONS = BRANCHES
+   (i-1) + (i-2) + (i-3) + .... + (i-j)
+   where j is the number of all possible options
+
+3)  During PostOrder Phase
+        Count variable initialized during PREOERDER phase at each level
+        is used to store count of all paths via that node
+
+                countPaths+=PathsfromCurrNode;
+
+
+4) In DP we can think it of as
+    Using conitinuous indexes(most recent subproblems) to solve current subproblem
+    dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];

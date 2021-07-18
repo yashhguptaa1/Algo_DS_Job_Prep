@@ -1,7 +1,5 @@
 package GRAPHS.DepthFirstSearch.C_HamiltonianPathsCycle;
 
-//https://www.pepcoding.com/resources/online-java-foundation/graphs/hamiltonian-official/ojquestion
-
 import java.io.*;
 import java.util.*;
 
@@ -14,11 +12,21 @@ public class Pep_HamiltonianPathCycle {
     //so that we dont loose original src and use it in base case
     public static void hamiltonian(ArrayList<Edge>[] graph, int src, int osrc, HashSet<Integer> vis, String psf) {
 
+        /*
+        int hamintonialPathAndCycle(int src, int osrc, int totalNoEdges, vector<bool> &vis, string psf)
+            {
+               if (totalNoEdges == N - 1)
+
+         */
+
         //our visited hashset/array contains vertices joki humne abhitak visit
         //krlyie
         //ab base case me hum last vertex add krte he psf me
         //usko visited me dalne ki jaroorat nhi kyunki vo last vertex he path ka
-        if(vis.size() == graph.length - 1) {
+
+        //hamiltonian path me saare vertices visit krna jaroori he
+        if(vis.size() == graph.length - 1)  // V-1 == V-1
+        {
             psf += src;
             System.out.print(psf);
 
@@ -49,6 +57,7 @@ public class Pep_HamiltonianPathCycle {
         }
         vis.remove(src);
     }
+
 
     public static void main(String[] args) throws IOException {
 

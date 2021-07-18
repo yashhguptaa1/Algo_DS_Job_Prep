@@ -88,12 +88,14 @@ public class GRAPH {
     //To delete vertex delete all its edges but dont remove the vertex itself
     //as in our graph
     //Index of Array corresponds to Vertex Number
+
+    //TC : O(V ^ 2)
     public static void removeVertex(ArrayList<Edge>[] graph, int src)
     {
-        for(int i = graph[src].size()-1; i>=0;i--)
+        for(int i = graph[src].size()-1; i>=0;i--)// O(E)
         {
             int nbr = graph[src].get(i).nbr;
-            removeEdge(graph,src,nbr);
+            removeEdge(graph,src,nbr);//O(V+E)
         }
         graph[src].add(new Edge(-1,-1));
     }

@@ -1,6 +1,5 @@
 package GRAPHS.DepthFirstSearch.B_AllPaths;
 
-//https://www.pepcoding.com/resources/online-java-foundation/graphs/print-all-paths-official/ojquestion
 
 import java.io.*;
 import java.util.*;
@@ -44,11 +43,11 @@ public class Pep_PrintCountAllPaths {
         vis[src] = false;
     }
 
-    public static void countAllPaths(ArrayList <Edge> graph[], int src, int dst, boolean vis[],int countNodesInPath[])
+    public static void countAllPaths(ArrayList <Edge> graph[], int src, int dst, boolean vis[],int countPaths[])
     {
         if(src == dst)
         {
-            countNodesInPath[0]++;
+            countPaths[0]++;
             return;
         }
 
@@ -58,7 +57,7 @@ public class Pep_PrintCountAllPaths {
         {
             if(vis[e.nbr] == false)
             {
-                countAllPaths(graph,e.nbr,dst,vis,countNodesInPath);
+                countAllPaths(graph,e.nbr,dst,vis,countPaths);
             }
         }
 
