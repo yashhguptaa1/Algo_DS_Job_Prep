@@ -1,13 +1,11 @@
 package RECURSION.BACKTRACKING.Type1_PlaceUnplace.H_String_Kselection;
 
-
-import javax.net.ssl.SSLContext;
 import java.io.*;
 import java.util.*;
 
-public class PEP_permutation {
+public class PEP_WordsKLengthWords1 {
 
-    public static void generateWords(int currSlot, int totalSlotsToBeFilled, String ustr, HashSet<Character>vis,String asf)
+    public static void permutation(int currSlot, int totalSlotsToBeFilled, String ustr, HashSet<Character>vis, String asf)
     {
         //BC
         if(currSlot > totalSlotsToBeFilled)
@@ -28,7 +26,7 @@ public class PEP_permutation {
                 vis.add(ch);
 
                 //LEVELS
-                generateWords(currSlot+1,totalSlotsToBeFilled,ustr,vis,asf+ch);
+                permutation(currSlot+1,totalSlotsToBeFilled,ustr,vis,asf+ch);
 
                 //UNPLACE
                 vis.remove(ch);
@@ -50,6 +48,6 @@ public class PEP_permutation {
             }
         }
 
-        generateWords(1,k,ustr,new HashSet<>(),"");
+        permutation(1,k,ustr,new HashSet<>(),"");
     }
 }
