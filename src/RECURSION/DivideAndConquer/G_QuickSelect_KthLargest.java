@@ -1,4 +1,4 @@
-package RECURSION.DivideAndConquer;
+package A_recursion.DivideAndConquer;
 
 import java.util.*;
 public class G_QuickSelect_KthLargest {

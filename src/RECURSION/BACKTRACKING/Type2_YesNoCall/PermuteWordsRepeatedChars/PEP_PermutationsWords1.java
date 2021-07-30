@@ -1,4 +1,4 @@
-package RECURSION.BACKTRACKING.Type2_YesNoCall.PermuteWordsRepeatedChars;
+package A_recursion.BACKTRACKING.Type2_YesNoCall.PermuteWordsRepeatedChars;
 
 import java.io.*;
 import java.util.*;

@@ -1,4 +1,4 @@
-package RECURSION.BACKTRACKING.Type2_YesNoCall.A_Combination1;
+package A_recursion.BACKTRACKING.Type2_YesNoCall.A_Combination1;
 
 import java.io.*;
 

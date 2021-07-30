@@ -1,4 +1,4 @@
-package RECURSION.DivideAndConquer.BinarySearch.SortedArr;
+package A_recursion.DivideAndConquer.BinarySearch.SortedArr;
 
 
 public class A_L704_BinarySearch {

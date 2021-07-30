@@ -1,4 +1,4 @@
-package RECURSION.Type_R3_PrePhase_RecCallPhase_PostPhase.SingleRecCall.OnlyPrint_ReturnVoid;
+package A_recursion.Type_R3_PrePhase_RecCallPhase_PostPhase.SingleRecCall.OnlyPrint_ReturnVoid;
 
 import java.util.Scanner;
 

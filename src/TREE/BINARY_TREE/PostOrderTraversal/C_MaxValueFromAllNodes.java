@@ -16,6 +16,8 @@ public class C_MaxValueFromAllNodes {
 
     //Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
 
+    //LEVEL: TreeNode
+    //2 OPTIONS: go to LEFTSUBTREE  || go to RIGHTSUBTREE
     public static int max(TreeNode node) {
         if(node == null) return Integer.MIN_VALUE;
 
@@ -47,6 +49,15 @@ public class C_MaxValueFromAllNodes {
 
         TreeNode root = construct(arr);
 
+        System.out.println(max(root));
 
     }
 }
+/*
+Sample Input
+19
+50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n
+Sample Output
+87
+
+ */

@@ -1,0 +1,42 @@
+n=4 r=3
+after seeing imgHints
+
+1) rec call1(currItem,boxes [0,0,0,0],n,r) --> rec call1(currItem + 1,boxes [1,0,0,0],n,r)
+2) for loop {each time from 0 to n} //Options boxslots
+
+
+(n boxes) and number of non-identical items (ritems)
+
+Each Level corresponds to each respective item
+Mtlb as we go Depthvise, at each level , for a particular item
+ITEM CHOOSES which BOXSLOT should it be placed in
+
+The number of boxes denote the number of options ITEM can go in
+It is denoted Breadthvise
+
+ANS = nboxes P ritems
+
+Since Number of items denote number of levels
+and base cases are written to exit from level
+when all items are taken care of
+
+box[i] = 0 denotes empty box
+any item can occupy current box
+
+current Item has choosen box at ith place
+no other item can select ith box
+
+PLACE ITEM
+
+Remaining Items have option of choosing from unmarked boxes
+In next iteration curr item plans to choose some other box
+different from box it already chose
+if we dont do this then there will be two boxes with same item
+also some other item will try to occupy current box in some other
+permutation
+box[i] = 0 denotes empty box
+
+UNPLACE ITEM
+
+
+

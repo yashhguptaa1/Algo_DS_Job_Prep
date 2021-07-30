@@ -1,4 +1,4 @@
-package RECURSION.BACKTRACKING.Type2_YesNoCall.B_Permutation2;
+package A_recursion.BACKTRACKING.Type2_YesNoCall.B_Permutation2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

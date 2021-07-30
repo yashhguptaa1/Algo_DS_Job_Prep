@@ -1,9 +1,9 @@
-package RECURSION.BACKTRACKING.Type1_PlaceUnplace.H_String_Kselection;
+package A_recursion.BACKTRACKING.Type1_PlaceUnplace.H_String_Kselection;
 
 import java.util.*;
 
-public class PEP_combination {
-    public static void wordsKselection(String uniqueStr,int stringLenSoFar,int totalSelection,String asf,int lastCharIdx)
+public class PEP_WordsKSelection2 {
+    public static void combination(String uniqueStr, int stringLenSoFar, int totalSelection, String asf, int lastCharIdx)
     {
         //BC
         if(stringLenSoFar == totalSelection)
@@ -18,7 +18,7 @@ public class PEP_combination {
             char ch =uniqueStr.charAt(i);
 
             //LEVELS
-            wordsKselection(uniqueStr,stringLenSoFar+1,totalSelection,asf+ch,i);
+            combination(uniqueStr,stringLenSoFar+1,totalSelection,asf+ch,i);
         }
 
 
@@ -41,7 +41,7 @@ public class PEP_combination {
         //Note lastcharidx should be -1
         //i used 0 before
         //it didnt select "a" in any selection
-        wordsKselection( ustr, 0, k, "",-1);
+        combination( ustr, 0, k, "",-1);
     }
 
 }

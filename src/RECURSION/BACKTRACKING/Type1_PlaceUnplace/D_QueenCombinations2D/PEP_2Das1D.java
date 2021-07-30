@@ -1,4 +1,4 @@
-package RECURSION.BACKTRACKING.Type1_PlaceUnplace.D_QueenCombinations2D;
+package A_recursion.BACKTRACKING.Type1_PlaceUnplace.D_QueenCombinations2D;
 
 public class PEP_2Das1D {
 

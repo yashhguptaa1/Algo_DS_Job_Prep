@@ -1,4 +1,4 @@
-package RECURSION.BACKTRACKING.Type1_PlaceUnplace.B_QueenPermutations2D;
+package A_recursion.BACKTRACKING.Type1_PlaceUnplace.B_QueenPermutations2D;
 
 import java.io.*;
 

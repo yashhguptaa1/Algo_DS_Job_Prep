@@ -1,4 +1,4 @@
-package RECURSION.BACKTRACKING.Type1_PlaceUnplace.E_Nqueens_IsSafe_2Das1D;
+package A_recursion.BACKTRACKING.Type1_PlaceUnplace.E_Nqueens_IsSafe_2Das1D;
 
 import java.io.*;
 

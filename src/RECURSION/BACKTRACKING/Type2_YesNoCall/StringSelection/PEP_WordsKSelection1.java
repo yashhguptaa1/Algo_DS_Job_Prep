@@ -1,11 +1,12 @@
-package RECURSION.BACKTRACKING.Type2_YesNoCall.StringSelection;
+package A_recursion.BACKTRACKING.Type2_YesNoCall.StringSelection;
 
 import java.util.*;
 
-public class PEP_combinations {
+public class PEP_WordsKSelection1 {
 
     public static void generateSelection(int i,String ustr,int ssf,int ts,String asf)
     {
+        //LEVEL : character {current index from string}
         //BC
         if(i == ustr.length())
         {
@@ -19,6 +20,7 @@ public class PEP_combinations {
 
         char ch = ustr.charAt(i);
 
+        //OPTIONS
         //YES
         generateSelection(i+1,ustr,ssf+1,ts,asf+ch);
 

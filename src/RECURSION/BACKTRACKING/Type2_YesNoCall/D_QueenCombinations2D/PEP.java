@@ -1,4 +1,4 @@
-package RECURSION.BACKTRACKING.Type2_YesNoCall.D_QueenCombinations2D;
+package A_recursion.BACKTRACKING.Type2_YesNoCall.D_QueenCombinations2D;
 
 import java.io.*;
 

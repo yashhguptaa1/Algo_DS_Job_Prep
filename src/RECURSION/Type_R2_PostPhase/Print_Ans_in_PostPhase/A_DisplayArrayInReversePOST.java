@@ -1,4 +1,4 @@
-package RECURSION.Type_R2_PostPhase.Print_Ans_in_PostPhase;
+package A_recursion.Type_R2_PostPhase.Print_Ans_in_PostPhase;
 
 import java.util.Scanner;
 

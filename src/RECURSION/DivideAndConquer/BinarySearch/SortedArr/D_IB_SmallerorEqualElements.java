@@ -1,4 +1,4 @@
-package RECURSION.DivideAndConquer.BinarySearch.SortedArr;
+package A_recursion.DivideAndConquer.BinarySearch.SortedArr;
 
 public class D_IB_SmallerorEqualElements {
     public int solve(int[] arr, int x) {

@@ -24,6 +24,8 @@ public class D_SumOfAllNodes {
     //From this I can deduce it Belongs to
     //Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
 
+    //LEVEL: TreeNode
+    //2 OPTIONS: go to LEFTSUBTREE  || go to RIGHTSUBTREE
     public static int sum(TreeNode node) {
         if(node == null) return 0;
 
@@ -57,3 +59,11 @@ public class D_SumOfAllNodes {
 
     }
 }
+
+/*
+Sample Input
+19
+50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n
+Sample Output
+448
+ */

@@ -1,4 +1,4 @@
-package RECURSION.DivideAndConquer.BinarySearch.SortedArr;
+package A_recursion.DivideAndConquer.BinarySearch.SortedArr;
 
 public class I_L50_PowerOfNum {
 

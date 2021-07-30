@@ -1,4 +1,4 @@
-package RECURSION.Type_R1_PrePhase.Work_in_PrePhase.Print_Ans_in_BaseCase;
+package A_recursion.Type_R1_PrePhase.Work_in_PrePhase.Print_Ans_in_BaseCase;
 
 import java.util.*;
 public class PrintPermutations {

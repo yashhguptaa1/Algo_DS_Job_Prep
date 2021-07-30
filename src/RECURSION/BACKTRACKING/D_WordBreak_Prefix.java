@@ -1,4 +1,4 @@
-package RECURSION.BACKTRACKING;
+package A_recursion.BACKTRACKING;
 
 import java.util.*;
 public class D_WordBreak_Prefix {

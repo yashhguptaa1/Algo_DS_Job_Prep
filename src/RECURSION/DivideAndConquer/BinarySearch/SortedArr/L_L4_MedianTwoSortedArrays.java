@@ -1,6 +1,4 @@
-package RECURSION.DivideAndConquer.BinarySearch.SortedArr;
-
-import java.util.*;
+package A_recursion.DivideAndConquer.BinarySearch.SortedArr;
 
 public class L_L4_MedianTwoSortedArrays {
 

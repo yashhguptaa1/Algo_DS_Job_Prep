@@ -12,6 +12,11 @@ public class E_Height_DepthOfBT {
     //Or we can say Root Node is at Level 0
     //The null node will be at height -1
     //change base case to return -1
+
+    //return the height of tree in terms of edges
+    //For N=2 edges=1
+    //BC : For N=0 => N = 2-2 = 0
+    //Edges = 1-2 = -1
     public static int height(TreeNode node) {
         if(node == null) return -1;
 
@@ -100,4 +105,7 @@ Constraints:
 The number of nodes in the tree is in the range [0, 104].
 -100 <= Node.val <= 100
 
+
+19
+50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n
  */

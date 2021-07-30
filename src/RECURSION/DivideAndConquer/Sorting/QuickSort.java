@@ -1,4 +1,4 @@
-package RECURSION.DivideAndConquer.Sorting;
+package A_recursion.DivideAndConquer.Sorting;
 
 public class QuickSort {
 

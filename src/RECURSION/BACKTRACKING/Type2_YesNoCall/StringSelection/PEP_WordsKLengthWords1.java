@@ -1,9 +1,9 @@
-package RECURSION.BACKTRACKING.Type2_YesNoCall.StringSelection;
+package A_recursion.BACKTRACKING.Type2_YesNoCall.StringSelection;
 
 import java.io.*;
 import java.util.*;
 
-public class PEP_WordsKLengthWords2 {
+public class PEP_WordsKLengthWords1 {
 
     public static void generateWords(int cc,String ustr,int ssf,int ts,Character []slots)
     {

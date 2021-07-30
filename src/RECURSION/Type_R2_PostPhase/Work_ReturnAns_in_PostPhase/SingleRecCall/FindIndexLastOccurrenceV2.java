@@ -1,4 +1,4 @@
-package RECURSION.Type_R2_PostPhase.Work_ReturnAns_in_PostPhase.SingleRecCall;
+package A_recursion.Type_R2_PostPhase.Work_ReturnAns_in_PostPhase.SingleRecCall;
 
 public class FindIndexLastOccurrenceV2 {
     public static int lastIndex(int[] arr, int idx, int x){

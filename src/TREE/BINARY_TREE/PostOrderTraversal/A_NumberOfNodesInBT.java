@@ -20,7 +20,11 @@ public class A_NumberOfNodesInBT {
 
     //Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
 
+    //LEVEL: TreeNode
+    //2 OPTIONS: go to LEFTSUBTREE  || go to RIGHTSUBTREE
     public static int size(TreeNode node) {
+
+        //No node there => size = 0
         if(node == null) return 0;
 
         int SizeOfLeftBTafterCurrNode = size(node.left);
@@ -54,3 +58,11 @@ public class A_NumberOfNodesInBT {
 
     }
 }
+
+/*
+Sample Input
+19
+50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n
+Sample Output
+9
+ */

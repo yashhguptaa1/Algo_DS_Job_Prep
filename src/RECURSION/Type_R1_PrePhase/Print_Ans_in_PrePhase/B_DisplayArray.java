@@ -1,4 +1,4 @@
-package RECURSION.Type_R1_PrePhase.Print_Ans_in_PrePhase;
+package A_recursion.Type_R1_PrePhase.Print_Ans_in_PrePhase;
 
 import java.util.Scanner;
 

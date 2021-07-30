@@ -1,4 +1,4 @@
-package RECURSION.BACKTRACKING.Type1_PlaceUnplace.D_QueenCombinations2D;
+package A_recursion.BACKTRACKING.Type1_PlaceUnplace.D_QueenCombinations2D;
 
 public class queenChoosesCell {
     public static void queensCombinations(int qpsf, int tq, boolean[][] chess, int i, int j){

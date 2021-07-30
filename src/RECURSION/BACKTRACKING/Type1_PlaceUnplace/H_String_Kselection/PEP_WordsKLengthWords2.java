@@ -1,9 +1,9 @@
-package RECURSION.BACKTRACKING.Type1_PlaceUnplace.H_String_Kselection;
+package A_recursion.BACKTRACKING.Type1_PlaceUnplace.H_String_Kselection;
 
 import java.io.*;
 import java.util.*;
 
-public class PEP_WordsKLengthWords1 {
+public class PEP_WordsKLengthWords2 {
 
     public static void permutation(int currSlot, int totalSlotsToBeFilled, String ustr, HashSet<Character>vis, String asf)
     {

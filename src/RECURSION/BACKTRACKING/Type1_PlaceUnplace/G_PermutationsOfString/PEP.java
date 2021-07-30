@@ -1,4 +1,4 @@
-package RECURSION.BACKTRACKING.Type1_PlaceUnplace.G_PermutationsOfString;
+package A_recursion.BACKTRACKING.Type1_PlaceUnplace.G_PermutationsOfString;
 
 import java.io.*;
 import java.util.*;
