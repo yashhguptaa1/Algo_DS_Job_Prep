@@ -1,13 +1,19 @@
 package LINKEDLISTS.L2_TwoPointers.Prev_Curr;
+import java.util.*;
 
 public class RemoveALLduplicatesFromSortedList {
 
-    class ListNode {
-        public int val;
-        public ListNode next;
-        ListNode(int x) { val = x; next = null; }
+    public static Scanner scn = new Scanner(System.in);
+
+    public static class ListNode {
+        int val = 0;
+        ListNode next = null;
+
+        ListNode(int val) {
+            this.val = val;
+        }
     }
-    public ListNode deleteDuplicates(ListNode head) {
+    public static ListNode deleteDuplicates(ListNode head) {
 
         if(head == null || head.next == null)
             return head;
@@ -18,9 +24,10 @@ public class RemoveALLduplicatesFromSortedList {
         dummyHeadNode.next=head;
         ListNode p=dummyHeadNode;
 
-        //Our current node is p
-        //then we compare first node of duplicate sublist (p.next)
-        //to second node of duplicate sublist (p.next.next)
+        //p: potential next
+        //curr: Our current node is p
+        //forw1: then we compare first node of duplicate sublist (p.next)
+        //forw2: to second node of duplicate sublist (p.next.next)
         while(p.next != null && p.next.next!=null)
         {
             //if they are duplicate store duplicate value
@@ -43,4 +50,31 @@ public class RemoveALLduplicatesFromSortedList {
 
         return dummyHeadNode.next;
     }
+
+    public static void printList(ListNode node) {
+        while (node != null) {
+            System.out.print(node.val + " ");
+            node = node.next;
+        }
+    }
+
+    public static ListNode makeList(int n) {
+        ListNode dummy = new ListNode(-1);
+        ListNode prev = dummy;
+        while (n-- > 0) {
+            prev.next = new ListNode(scn.nextInt());
+            prev = prev.next;
+        }
+
+        return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        ListNode head1 = makeList(scn.nextInt());
+
+        ListNode ans = deleteDuplicates(head1);
+        printList(ans);
+    }
+
+
 }

@@ -1,25 +1,30 @@
-package A_recursion.Type_R1_PrePhase.Print_Ans_in_PrePhase;
+package RECURSION.Type_R1_PrePhase.Print_Ans_in_PrePhase;
 
 import java.util.*;
 
 public class A_PrintDecreasingOrderPrePhase {
-    public static void main(String[] args) throws Exception {
-        // write your code here
 
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        PREprintDecreasing(n);
+    public static void main(String[] args) throws Exception {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        printDecreasing(n);
     }
 
+    public static void printDecreasing(int n) {
 
-    public static void PREprintDecreasing(int n){
-        //This base case denotes that pop from stack when we reach n=0
-        if(n==0)
+        // BC
+        if (n == 0)
             return;
 
+        // PREPHASE
+        // WORK on the way up(depthvise) : print
         System.out.println(n);
-        PREprintDecreasing(n-1);
+
+        // LEVEL : nth value
+
+        // RECURSIVE CALL
+        printDecreasing(n - 1);
     }
-
-
 }
+// 6:31 - 6:35

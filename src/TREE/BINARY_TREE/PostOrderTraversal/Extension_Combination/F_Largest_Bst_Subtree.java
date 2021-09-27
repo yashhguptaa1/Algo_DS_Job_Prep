@@ -1,4 +1,5 @@
 package TREE.BINARY_TREE.PostOrderTraversal.Extension_Combination;
+
 import TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.TreeNode;
 
 import java.io.*;
@@ -20,14 +21,15 @@ public class F_Largest_Bst_Subtree {
             largestBstSoFar = 0;
         }
     }
-//    static int largestBstSize = 0;
-//    static TreeNode ResBstNode = null;
+    // static int largestBstSize = 0;
+    // static TreeNode ResBstNode = null;
 
-    public static BSTPair largestBST(TreeNode node,int largestBstSize[],TreeNode ResBstNode) {
-        if(node == null) return new BSTPair();
+    public static BSTPair largestBST(TreeNode node, int largestBstSize[], TreeNode ResBstNode) {
+        if (node == null)
+            return new BSTPair();
 
-        BSTPair lres = largestBST(node.left,largestBstSize,ResBstNode);
-        BSTPair rres = largestBST(node.right,largestBstSize,ResBstNode);
+        BSTPair lres = largestBST(node.left, largestBstSize, ResBstNode);
+        BSTPair rres = largestBST(node.right, largestBstSize, ResBstNode);
 
         boolean isCurrBst = lres.max < node.val && rres.min > node.val;
 
@@ -37,7 +39,7 @@ public class F_Largest_Bst_Subtree {
         mres.isbst = lres.isbst && rres.isbst && isCurrBst;
         mres.largestBstSoFar = lres.largestBstSoFar + rres.largestBstSoFar + 1;
 
-        if(mres.isbst == true && mres.largestBstSoFar > largestBstSize[0]) {
+        if (mres.isbst == true && mres.largestBstSoFar > largestBstSize[0]) {
             ResBstNode = node;
             largestBstSize[0] = mres.largestBstSoFar;
         }
@@ -59,11 +61,11 @@ public class F_Largest_Bst_Subtree {
         }
 
         TreeNode root = construct(arr);
-        TreeNode node=null;
+        TreeNode node = null;
         // write your code here
-        int ans[]=new int[1];
+        int ans[] = new int[1];
 
-        BSTPair res = largestBST(root,ans,node);
+        BSTPair res = largestBST(root, ans, node);
 
         System.out.println(node.val + "@" + ans[0]);
     }

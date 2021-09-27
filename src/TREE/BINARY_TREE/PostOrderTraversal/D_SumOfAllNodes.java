@@ -22,7 +22,7 @@ public class D_SumOfAllNodes {
     //Sum of root.val + sum of lst nodes.val + sum of rst nodes.val
     //Possible by POSTORDER TRAVERSAL
     //From this I can deduce it Belongs to
-    //Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
+    //RECURSION.Type_R2_PostOrder_Rec_Call.Work_ReturnAns_in_PostPhase
 
     //LEVEL: TreeNode
     //2 OPTIONS: go to LEFTSUBTREE  || go to RIGHTSUBTREE

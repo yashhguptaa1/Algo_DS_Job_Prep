@@ -8,31 +8,32 @@ import static TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.construct;
 
 public class C_MaxValueFromAllNodes {
 
-    // want to exit only after traversing all nodes including root : Postorder traversal
+    // want to exit only after traversing all nodes including root 
+    // : Postorder traversal
     // find max in lst and store it
-    //find max in rst and store it
-    //compare it with root.val
-    //the maximum from these three is the max val in BT
+    // find max in rst and store it
+    // compare it with root.val
+    // the maximum from these three is the max val in BT
 
-    //Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
+    // RECURSION.Type_R2_PostOrder_Rec_Call.Work_ReturnAns_in_PostPhase
 
-    //LEVEL: TreeNode
-    //2 OPTIONS: go to LEFTSUBTREE  || go to RIGHTSUBTREE
+    // LEVEL: TreeNode
+    // 2 OPTIONS: go to LEFTSUBTREE || go to RIGHTSUBTREE
     public static int max(TreeNode node) {
-        if(node == null) return Integer.MIN_VALUE;
+        if (node == null)
+            return Integer.MIN_VALUE;
 
         int MaxFromAllNodesInLeftBT = max(node.left);
         int MaxFromAllNodesInRightBT = max(node.right);
 
-        int MaxFromAllNodesAfterCurrNode= Math.max(MaxFromAllNodesInLeftBT,MaxFromAllNodesInRightBT);
+        int MaxFromAllNodesAfterCurrNode = Math.max(MaxFromAllNodesInLeftBT, MaxFromAllNodesInRightBT);
 
-        //Now compare with Current Node of Current function
-        int MaxSoFar = Math.max(MaxFromAllNodesAfterCurrNode , node.val);
+        // Now compare with Current Node of Current function
+        int MaxSoFar = Math.max(MaxFromAllNodesAfterCurrNode, node.val);
 
         return MaxSoFar;
 
     }
-
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -54,10 +55,7 @@ public class C_MaxValueFromAllNodes {
     }
 }
 /*
-Sample Input
-19
-50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n
-Sample Output
-87
-
+ * Sample Input 19 50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n Sample Output
+ * 87
+ * 
  */

@@ -1,4 +1,4 @@
-package A_recursion.DivideAndConquer.BinarySearch.Unsorted;
+package RECURSION.DivideAndConquer.BinarySearch.Unsorted;
 
 public class A_L162_PeakElement {
 
@@ -34,5 +34,4 @@ public class A_L162_PeakElement {
 
         return -1;
     }
-
 }

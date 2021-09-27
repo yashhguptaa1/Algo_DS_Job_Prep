@@ -20,7 +20,6 @@ public class Sort01_EvenOdd {
         ListNode sorted1=new ListNode(-2);
         ListNode track1=sorted1;
 
-
         // iterator -> help in movement
         ListNode itr=head;
 

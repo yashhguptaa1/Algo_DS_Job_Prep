@@ -13,28 +13,26 @@ public class Pep_BfsNormal {
         String psf;
         int lvl;
 
-
-        BFSPair(int vtx, String psf,int lvl) {
+        BFSPair(int vtx, String psf, int lvl) {
             this.vtx = vtx;
             this.psf = psf;
-            this.lvl=lvl;
+            this.lvl = lvl;
         }
     }
 
     public static void bfs(ArrayList<Edge>[] graph, int src) {
         Queue<BFSPair> qu = new LinkedList<>();
 
-        int currLvl=0;
-        qu.add(new BFSPair(src, "" + src,currLvl));
+        int currLvl = 0;
+        qu.add(new BFSPair(src, "" + src, currLvl));
 
         boolean[] vis = new boolean[graph.length];
 
-        while(qu.size()!= 0) {
+        while (qu.size() != 0) {
 
-            int sz=qu.size();
+            int sz = qu.size();
             currLvl++;
-            while(sz-- > 0)
-            {
+            while (sz-- > 0) {
 
                 // 1. get + remove
                 BFSPair rem = qu.remove();
@@ -69,37 +67,18 @@ public class Pep_BfsNormal {
             String[] parts = br.readLine().split(" ");
             int v1 = Integer.parseInt(parts[0]);
             int v2 = Integer.parseInt(parts[1]);
-            int wt=Integer.parseInt(parts[2]);
-            addEdge(graph,v1,v2,wt);
+            int wt = Integer.parseInt(parts[2]);
+            addEdge(graph, v1, v2, wt);
         }
 
         int src = Integer.parseInt(br.readLine());
 
-        bfs(graph,src);
+        bfs(graph, src);
     }
-
 
 }
 /*
-Sample Input
-7
-8
-0 1 10
-1 2 10
-2 3 10
-0 3 10
-3 4 10
-4 5 10
-5 6 10
-4 6 10
-2
-Sample Output
-2@2
-1@21
-3@23
-0@210
-4@234
-5@2345
-6@2346
-
+ * Sample Input 7 8 0 1 10 1 2 10 2 3 10 0 3 10 3 4 10 4 5 10 5 6 10 4 6 10 2
+ * Sample Output 2@2 1@21 3@23 0@210 4@234 5@2345 6@2346
+ * 
  */

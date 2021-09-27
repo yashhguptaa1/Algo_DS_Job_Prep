@@ -44,13 +44,14 @@ public class MinCostPath {
         return dp[x][y] = minCost + maze[x][y];
     }
 
-    //4. You are standing in top-left cell
-    //  and are required to move to bottom-right cell.
-    //6. Each cell has a value that will have to be paid to enter that
-    //   cell (even for the top-left and bottom-right cell).
-    //7. You are required to traverse through the matrix and print the cost of path which is least costly.
-    //Since we have to reach bottomost right cell, the problem in matrix
-    //at bottomost right cell is the smallest.
+    // 4. You are standing in top-left cell
+    // and are required to move to bottom-right cell.
+    // 6. Each cell has a value that will have to be paid to enter that
+    // cell (even for the top-left and bottom-right cell).
+    // 7. You are required to traverse through the matrix and print the cost of path
+    // which is least costly.
+    // Since we have to reach bottomost right cell, the problem in matrix
+    // at bottomost right cell is the smallest.
     public static int minCostPath_tab1(int[][] maze, int x, int y, int[][] dp) {
         for (x = maze.length - 1; x >= 0; x--) {
             for (y = maze[0].length - 1; y >= 0; y--) {
@@ -73,20 +74,20 @@ public class MinCostPath {
     }
 
     public static int minCostPath_tab2(int[][] maze, int x, int y, int[][] dp) {
-        for(x = maze.length - 1; x >= 0; x--) {
-            for(y = maze[0].length - 1; y >= 0; y--) {
-                if(x == maze.length - 1 && y == maze[0].length - 1) {
+        for (x = maze.length - 1; x >= 0; x--) {
+            for (y = maze[0].length - 1; y >= 0; y--) {
+                if (x == maze.length - 1 && y == maze[0].length - 1) {
                     dp[x][y] = maze[x][y];
                     continue;
                 }
 
-                int minCost = (int)1e9;
+                int minCost = (int) 1e9;
                 // right call
-                if(y + 1 < maze[0].length) {
+                if (y + 1 < maze[0].length) {
                     minCost = Math.min(minCost, dp[x][y + 1]);
                 }
                 // down call
-                if(x + 1 < maze.length) {
+                if (x + 1 < maze.length) {
                     minCost = Math.min(minCost, dp[x + 1][y]);
                 }
 
@@ -97,18 +98,18 @@ public class MinCostPath {
     }
 
     public static void minCostPath(int[][] dp, int x, int y, String psf) {
-        if(x == dp.length -1 && y == dp[0].length - 1) {
+        if (x == dp.length - 1 && y == dp[0].length - 1) {
             System.out.println(psf);
-        } else if(x == dp.length - 1) {
+        } else if (x == dp.length - 1) {
             minCostPath(dp, x, y + 1, psf + "R ");
-        } else if(y == dp[0].length - 1) {
+        } else if (y == dp[0].length - 1) {
             minCostPath(dp, x + 1, y, psf + "D ");
         } else {
-            if(dp[x][y + 1] == dp[x + 1][y]) {
+            if (dp[x][y + 1] == dp[x + 1][y]) {
                 // both side
                 minCostPath(dp, x + 1, y, psf + "D ");
                 minCostPath(dp, x, y + 1, psf + "R ");
-            } else if(dp[x][y + 1] < dp[x + 1][y]) {
+            } else if (dp[x][y + 1] < dp[x + 1][y]) {
                 // right side
                 minCostPath(dp, x, y + 1, psf + "R ");
             } else {
@@ -119,20 +120,14 @@ public class MinCostPath {
     }
 
     public static void mazePath() {
-        int[][] maze = {
-                {0, 1, 4, 2, 8, 2},
-                {4, 3, 6, 5, 0, 4},
-                {1, 2, 4, 1, 4, 6},
-                {2, 0, 7, 3, 2, 2},
-                {3, 1, 5, 9, 2, 4},
-                {2, 7, 0, 8, 5, 1}
-        };
+        int[][] maze = { { 0, 1, 4, 2, 8, 2 }, { 4, 3, 6, 5, 0, 4 }, { 1, 2, 4, 1, 4, 6 }, { 2, 0, 7, 3, 2, 2 },
+                { 3, 1, 5, 9, 2, 4 }, { 2, 7, 0, 8, 5, 1 } };
 
         int[][] dp = new int[6][6];
         minCostPath_tab1(maze, 0, 0, dp);
 
-        for(int i = 0; i < 6; i++) {
-            for(int j = 0; j < 6; j++) {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
                 System.out.print(dp[i][j] + " ");
             }
             System.out.println();
@@ -142,24 +137,15 @@ public class MinCostPath {
 
 }
 /*
-1. You are given a number n, representing the number of rows.
-2. You are given a number m, representing the number of columns.
-3. You are given n*m numbers, representing elements of 2d array a, which represents a maze.
-4. You are standing in top-left cell and are required to move to bottom-right cell.
-5. You are allowed to move 1 cell right (h move) or 1 cell down (v move) in 1 motion.
-6. Each cell has a value that will have to be paid to enter that cell (even for the top-left and bottom-
-     right cell).
-7. You are required to traverse through the matrix and print the cost of path which is least costly.
-
-Sample Input
-6
-6
-0 1 4 2 8 2
-4 3 6 5 0 4
-1 2 4 1 4 6
-2 0 7 3 2 2
-3 1 5 9 2 4
-2 7 0 8 5 1
-Sample Output
-23
+ * 1. You are given a number n, representing the number of rows. 2. You are
+ * given a number m, representing the number of columns. 3. You are given n*m
+ * numbers, representing elements of 2d array a, which represents a maze. 4. You
+ * are standing in top-left cell and are required to move to bottom-right cell.
+ * 5. You are allowed to move 1 cell right (h move) or 1 cell down (v move) in 1
+ * motion. 6. Each cell has a value that will have to be paid to enter that cell
+ * (even for the top-left and bottom- right cell). 7. You are required to
+ * traverse through the matrix and print the cost of path which is least costly.
+ * 
+ * Sample Input 6 6 0 1 4 2 8 2 4 3 6 5 0 4 1 2 4 1 4 6 2 0 7 3 2 2 3 1 5 9 2 4
+ * 2 7 0 8 5 1 Sample Output 23
  */

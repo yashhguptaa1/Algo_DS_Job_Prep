@@ -11,19 +11,19 @@ public class ReverseLLbetweenMN {
             next = null;
         }
     }
-    public ListNode reverseBetween(ListNode h, int b, int c) {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
 
-        if(b==c)
-            return h;
+        if(left==right)
+            return head;
 
         //FROM POSSIBLE EDGE CASE 2
         ListNode dummyHeadNode=new ListNode(-1);
-        dummyHeadNode.next=h;
+        dummyHeadNode.next=head;
         ListNode prevEnd=dummyHeadNode;
-        ListNode endRev=h;
+        ListNode endRev=head;
 
         //FROM PATTERN L2.TP2 setting up pointers at optimal position
-        for(int i=1;i<b;i++)
+        for(int i=1;i<left;i++)
         {
             prevEnd=endRev;
             endRev=endRev.next;
@@ -32,7 +32,7 @@ public class ReverseLLbetweenMN {
         ListNode startRev=endRev;
         ListNode afterStart=startRev.next;
 
-        for(int i=b;i<c;i++)
+        for(int i=left;i<right;i++)
         {
             startRev=startRev.next;
             afterStart=startRev.next;

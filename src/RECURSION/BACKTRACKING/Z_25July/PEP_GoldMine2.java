@@ -1,4 +1,4 @@
-package A_recursion.BACKTRACKING.Z_25July;
+package RECURSION.BACKTRACKING.Z_25July;
 
 import java.util.*;
 
@@ -50,6 +50,6 @@ public class PEP_GoldMine2 {
         }
         getMaxGold(arr);
         System.out.println(max);
+        scn.close();
     }
-
 }

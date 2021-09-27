@@ -5,11 +5,12 @@ import TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.TreeNode;
 public class G_RemoveLeavesBinaryTree {
 
     // As we have to work on leaf nodes
-    //Preorder is more preferable
+    // Preorder is more preferable
     public static TreeNode removeLeaves1(TreeNode node) {
-        if(node == null) return null;
+        if (node == null)
+            return null;
 
-        if(node.left == null && node.right == null) {
+        if (node.left == null && node.right == null) {
             return null;
         }
         node.left = removeLeaves1(node.left);
@@ -19,5 +20,5 @@ public class G_RemoveLeavesBinaryTree {
 
 }
 /*
-The function is expected to remove all leaf nodes from the tree.
+ * The function is expected to remove all leaf nodes from the tree.
  */

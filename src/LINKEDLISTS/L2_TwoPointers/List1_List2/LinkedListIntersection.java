@@ -8,6 +8,7 @@ public class LinkedListIntersection {
         ListNode(int x) { val = x; next = null; }
     }
 
+    //USING DIFFERENCE METHOD
     public ListNode getIntersectionNode(ListNode a, ListNode b) {
 
         int s1=getSize(a);

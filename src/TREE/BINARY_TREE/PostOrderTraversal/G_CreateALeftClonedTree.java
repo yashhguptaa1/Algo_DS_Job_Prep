@@ -4,15 +4,16 @@ import TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.TreeNode;
 
 public class G_CreateALeftClonedTree {
 
-    //Humme Leftsubtree nodes aur RightSubtree nodes phle chahiye
-    //because these nodes will act as child nodes of the new node that we append
+    // Humme Leftsubtree nodes aur RightSubtree nodes phle chahiye
+    // because these nodes will act as child nodes of the new node that we append
 
-    //aur post phase me jo current node hoga vo parent bnjayega new node ka
+    // aur post phase me jo current node hoga vo parent bnjayega new node ka
 
-    //Use RECURSION.Type_R2_PostPhase.Work_ReturnAns_in_PostPhase.MultipleRecCall
+    // Use RECURSION.Type_R2_PostPhase.Work_ReturnAns_in_PostPhase.MultipleRecCall
 
-    public static TreeNode createLeftCloneTree(TreeNode node){
-        if(node == null) return null;
+    public static TreeNode createLeftCloneTree(TreeNode node) {
+        if (node == null)
+            return null;
 
         TreeNode lcn = createLeftCloneTree(node.left); // left child node
         TreeNode rcn = createLeftCloneTree(node.right);// right child node
@@ -26,6 +27,7 @@ public class G_CreateALeftClonedTree {
 
 }
 /*
- The function is expected to create a new node for every node equal in value to it and inserted between itself and it's left child.
- Check question video for clarity.
+ * The function is expected to create a new node for every node equal in value
+ * to it and inserted between itself and it's left child. Check question video
+ * for clarity.
  */

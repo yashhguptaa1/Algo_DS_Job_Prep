@@ -1,4 +1,4 @@
-package A_recursion.BACKTRACKING;
+package RECURSION.BACKTRACKING;
 
 public class PEP_CoinChangeCombination1 {
     // coin change combination 1, amtsf-> amount so far, tamt-> total amount

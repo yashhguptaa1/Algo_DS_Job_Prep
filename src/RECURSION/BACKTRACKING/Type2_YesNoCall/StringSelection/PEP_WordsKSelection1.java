@@ -1,4 +1,4 @@
-package A_recursion.BACKTRACKING.Type2_YesNoCall.StringSelection;
+package RECURSION.BACKTRACKING.Type2_YesNoCall.StringSelection;
 
 import java.util.*;
 
@@ -42,5 +42,7 @@ public class PEP_WordsKSelection1 {
         }
 
         generateSelection(0, ustr, 0, k, "");
+        scn.close();
     }
+
 }

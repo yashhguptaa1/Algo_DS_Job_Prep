@@ -9,6 +9,11 @@ public class RotateList {
     }
     public ListNode rotateRight(ListNode h, int k) {
 
+        if(h == null)
+        {
+            return null;
+        }
+        
         //Find the tail and size of LL
         ListNode tail=h;
         //first node already counted

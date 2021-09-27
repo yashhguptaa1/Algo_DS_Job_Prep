@@ -47,11 +47,7 @@ public class MergeKSortedLists {
             currNode=currNode.next;
             if(currNode !=null )
                 pq.add(currNode);
-
-
         }
-
-
         return dummyHead.next;
     }
 

@@ -18,16 +18,16 @@ public class UsingQueuePopEfficient {
         }
 
         // basically we ensure that top of stack is denoted by
-        //the front of queue from where we can remove ele in constant time
+        // the front of queue from where we can remove ele in constant time
         void push(int val) {
             // 1. fill helperQ from mainQ
-            while(mainQ.size() > 0) {
+            while (mainQ.size() > 0) {
                 helperQ.add(mainQ.remove());
             }
             // 2. add new element in mainQ
             mainQ.add(val);
             // 3. refill mainQ from helperq
-            while(helperQ.size() > 0) {
+            while (helperQ.size() > 0) {
                 mainQ.add(helperQ.remove());
             }
         }
@@ -50,8 +50,9 @@ public class UsingQueuePopEfficient {
             return mainQ.peek();
         }
 
-
-
+        public boolean empty() {
+            return (mainQ.size() == 0);
+        }
     }
 
     public static void main(String[] args) throws Exception {
@@ -81,57 +82,8 @@ public class UsingQueuePopEfficient {
     }
 }
 /*
-Sample Input
-push 10
-push 20
-push 5
-push 8
-push 2
-push 4
-push 11
-top
-size
-pop
-top
-size
-pop
-top
-size
-pop
-top
-size
-pop
-top
-size
-pop
-top
-size
-pop
-top
-size
-pop
-quit
-Sample Output
-11
-7
-11
-4
-6
-4
-2
-5
-2
-8
-4
-8
-5
-3
-5
-20
-2
-20
-10
-1
-10
-
+ * Sample Input push 10 push 20 push 5 push 8 push 2 push 4 push 11 top size pop
+ * top size pop top size pop top size pop top size pop top size pop top size pop
+ * quit Sample Output 11 7 11 4 6 4 2 5 2 8 4 8 5 3 5 20 2 20 10 1 10
+ * 
  */

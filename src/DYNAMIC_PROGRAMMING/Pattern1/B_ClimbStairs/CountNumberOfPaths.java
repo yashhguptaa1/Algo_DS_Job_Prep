@@ -5,26 +5,26 @@ public class CountNumberOfPaths {
     // ~~~~~~~~~~~~~~Climb Stairs~~~~~~~~~~~~~
     public static int climbStair_rec(int currStairNumber) {
 
-        //when I reach 0th stair
-        //I found one valid path
-        //increment total valid paths by 1
+        // when I reach 0th stair
+        // I found one valid path
+        // increment total valid paths by 1
         if (currStairNumber == 0) {
             return 1;
         }
 
-        //During PREOERDER phase
-        //At each Level , a count variable is assigned to Node
+        // During PREOERDER phase
+        // At each Level , a count variable is assigned to Node
         int countPaths = 0;
         for (int j = 1; j <= 3; j++) { // ALL Possible Branches(options) from each node(rec call)
-            if (currStairNumber - j >= 0) {//Use only valid branches
+            if (currStairNumber - j >= 0) {// Use only valid branches
 
                 // Draw Branches
                 int PathsfromCurrNode = climbStair_rec(currStairNumber - j);
 
-                //During PostOrder Phase
-                //count variable initialized during PREOERDER phase at each level
+                // During PostOrder Phase
+                // count variable initialized during PREOERDER phase at each level
                 // is used to store count of all paths via that node
-                countPaths+=PathsfromCurrNode;
+                countPaths += PathsfromCurrNode;
             }
         }
         return countPaths;
@@ -32,7 +32,7 @@ public class CountNumberOfPaths {
 
     public static int climbStair_memo(int n, int[] dp) {
 
-        //DP's smallest problem solved by me
+        // DP's smallest problem solved by me
         if (n == 0) {
             return dp[0] = 1;
         }
@@ -87,17 +87,14 @@ public class CountNumberOfPaths {
 }
 
 /*
-QUESTION 1
-1. You are given a number n, representing the number of stairs in a staircase.
-2. You are on the 0th step and are required to climb to the top.
-3. In one move, you are allowed to climb 1, 2 or 3 stairs.
-4. You are required to print the number of different paths via which you can climb to the top.
-
-Since number of jumps are fixed(1,2,3) only we will get same number of paths
-whether we start from top and go to bottom OR start from bottom and go top
-
-Sample Input
-4
-Sample Output
-7
+ * QUESTION 1 1. You are given a number n, representing the number of stairs in
+ * a staircase. 2. You are on the 0th step and are required to climb to the top.
+ * 3. In one move, you are allowed to climb 1, 2 or 3 stairs. 4. You are
+ * required to print the number of different paths via which you can climb to
+ * the top.
+ * 
+ * Since number of jumps are fixed(1,2,3) only we will get same number of paths
+ * whether we start from top and go to bottom OR start from bottom and go top
+ * 
+ * Sample Input 4 Sample Output 7
  */

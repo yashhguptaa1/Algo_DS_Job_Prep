@@ -1,4 +1,4 @@
-package A_recursion.Type_R3_PrePhase_RecCallPhase_PostPhase.SingleRecCall.ReturnType_Arrays_List;
+package RECURSION.Type_R3_PrePhase_RecCallPhase_PostPhase.SingleRecCall.ReturnType_Arrays_List;
 
 import java.io.*;
 
@@ -16,12 +16,12 @@ public class FindAllIndicesOfOccurrence {
 
         int[] iarr = allIndices(arr, x, 0, 0);
 
-        if(iarr.length == 0){
+        if (iarr.length == 0) {
             System.out.println();
             return;
         }
 
-        for(int i = 0; i < iarr.length; i++){
+        for (int i = 0; i < iarr.length; i++) {
             System.out.println(iarr[i]);
         }
     }

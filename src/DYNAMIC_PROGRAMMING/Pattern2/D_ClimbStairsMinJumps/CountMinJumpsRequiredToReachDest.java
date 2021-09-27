@@ -18,9 +18,9 @@ public class CountMinJumpsRequiredToReachDest {
 
     public static int climbStair_minJumps_memo(int i, int n, int[] jumps, int[] dp) {
 
-        //Mjhe dest se dest pr jump lgana he
-        //Me koi bhi jump naa lun
-        //store 0 as we want min jumps possible
+        // Mjhe dest se dest pr jump lgana he
+        // Me koi bhi jump naa lun
+        // store 0 as we want min jumps possible
         if (i == n) {
             return dp[i] = 0;
         }
@@ -36,7 +36,6 @@ public class CountMinJumpsRequiredToReachDest {
 
         return minJumps == 1e9 ? (dp[i] = minJumps) : (dp[i] = minJumps + 1);
     }
-
 
     public static int climbStair_minJumps_tab(int i, int n, int[] jumps, int[] dp) {
         for (i = n; i >= 0; i--) {
@@ -60,29 +59,15 @@ public class CountMinJumpsRequiredToReachDest {
         return dp[0];
     }
 
-
 }
 /*
-
-1. You are given a number n, representing the number of stairs in a staircase.
-2. You are on the 0th step and are required to climb to the top.
-3. You are given n numbers, where ith element's value represents - till how far from the step you
-     could jump to in a single move.  You can of-course fewer number of steps in the move.
-4. You are required to print the number of minimum moves in which you can reach the top of
-     staircase.
-Note -> If there is no path through the staircase print null.
-Sample Input
-10
-3
-3
-0
-2
-1
-2
-4
-2
-0
-0
-Sample Output
-4
+ * 
+ * 1. You are given a number n, representing the number of stairs in a
+ * staircase. 2. You are on the 0th step and are required to climb to the top.
+ * 3. You are given n numbers, where ith element's value represents - till how
+ * far from the step you could jump to in a single move. You can of-course fewer
+ * number of steps in the move. 4. You are required to print the number of
+ * minimum moves in which you can reach the top of staircase. Note -> If there
+ * is no path through the staircase print null. Sample Input 10 3 3 0 2 1 2 4 2
+ * 0 0 Sample Output 4
  */

@@ -26,6 +26,11 @@ OR
 WE STORE IT IN SOME VARIABLE
 
 3)IN CALL PHASE
+
+using return type var we store reference to next call stack from current func call
+
+and that is how one call stack is connected to another
+
 NUMBER OF RECURSIVE CALLS MADE FROM CURRENT NODE DENOTE
 NUMBER OF BRANCHES WHICH IS SAME AS
 NUMBER OPTIONS THAT EVERY RECURSIVE CALL CAN HAVE
@@ -57,3 +62,4 @@ i) Arraylist Questions Folder
     USING THE VALUE THAT YOU NOTED DOWN IN PRE PHASE
 
 5) RETURN UPDATED RESULT
+Returning reference of current call stack to next call stack below it.

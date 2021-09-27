@@ -1,4 +1,4 @@
-package A_recursion.DivideAndConquer.Sorting;
+package RECURSION.DivideAndConquer.Sorting;
 
 public class MergeSortArrays {
 

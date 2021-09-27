@@ -1,4 +1,4 @@
-package A_recursion.BACKTRACKING.CoinChangePermutations;
+package RECURSION.BACKTRACKING.CoinChangePermutations;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package A_recursion.BACKTRACKING.Z_25July;
+package RECURSION.BACKTRACKING.Z_25July;
 
 import java.util.Scanner;
 

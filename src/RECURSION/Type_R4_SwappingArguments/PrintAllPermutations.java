@@ -1,4 +1,4 @@
-package A_recursion.Type_R4_SwappingArguments;
+package RECURSION.Type_R4_SwappingArguments;
 
 public class PrintAllPermutations {
 }

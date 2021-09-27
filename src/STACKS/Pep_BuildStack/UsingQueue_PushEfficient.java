@@ -1,4 +1,5 @@
 package STACKS.Pep_BuildStack;
+
 import java.io.*;
 import java.util.*;
 
@@ -20,7 +21,6 @@ public class UsingQueue_PushEfficient {
             mainQ.add(val);
         }
 
-
         int pop() {
             if (mainQ.size() == 0) {
                 System.out.println("Stack underflow");
@@ -37,7 +37,7 @@ public class UsingQueue_PushEfficient {
             mainQ.remove();
             // change reference
             // As our helper queue is like the stack with top element popped
-            //so make helper queue as mainq now
+            // so make helper queue as mainq now
             Queue<Integer> temp = mainQ;
             mainQ = helperQ;
             helperQ = temp;
@@ -65,6 +65,10 @@ public class UsingQueue_PushEfficient {
             helperQ = temp;
             // return val
             return val;
+        }
+
+        public boolean empty() {
+            return (mainQ.size() == 0);
         }
     }
 
@@ -96,57 +100,8 @@ public class UsingQueue_PushEfficient {
 }
 
 /*
-Sample Input
-push 10
-push 20
-push 5
-push 8
-push 2
-push 4
-push 11
-top
-size
-pop
-top
-size
-pop
-top
-size
-pop
-top
-size
-pop
-top
-size
-pop
-top
-size
-pop
-top
-size
-pop
-quit
-Sample Output
-11
-7
-11
-4
-6
-4
-2
-5
-2
-8
-4
-8
-5
-3
-5
-20
-2
-20
-10
-1
-10
-
+ * Sample Input push 10 push 20 push 5 push 8 push 2 push 4 push 11 top size pop
+ * top size pop top size pop top size pop top size pop top size pop top size pop
+ * quit Sample Output 11 7 11 4 6 4 2 5 2 8 4 8 5 3 5 20 2 20 10 1 10
+ * 
  */

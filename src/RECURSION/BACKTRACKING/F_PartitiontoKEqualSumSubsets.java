@@ -1,4 +1,4 @@
-package A_recursion.BACKTRACKING;
+package RECURSION.BACKTRACKING;
 
 public class F_PartitiontoKEqualSumSubsets {
 }

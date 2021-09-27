@@ -8,24 +8,25 @@ import static TREE.BINARY_TREE.PreOrderTraversal.A_CreationDisplayBT.construct;
 
 public class A_NumberOfNodesInBT {
 
-    //I have
-    //RootNode and Lst and Rst
-    //Size of tree will be
-    //size of lst + size of rst + size of rootnode which is 1 (node)
-    //return the size
+    // I have
+    // RootNode and Lst and Rst
+    // Size of tree will be
+    // size of lst + size of rst + size of rootnode which is 1 (node)
+    // return the size
 
-    //Basically i want to obtain size of lst and rst first
-    //Possible by POSTORDER TRAVERSAL
-    //then add rootnode to it
+    // Basically i want to obtain size of lst and rst first
+    // Possible by POSTORDER TRAVERSAL
+    // then add rootnode to it
 
-    //Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
+    // Type R2 : Work in PostPhase :Return ans in PostPhase: Multiple Rec Call
 
-    //LEVEL: TreeNode
-    //2 OPTIONS: go to LEFTSUBTREE  || go to RIGHTSUBTREE
+    // LEVEL: TreeNode
+    // 2 OPTIONS: go to LEFTSUBTREE || go to RIGHTSUBTREE
     public static int size(TreeNode node) {
 
-        //No node there => size = 0
-        if(node == null) return 0;
+        // No node there => size = 0
+        if (node == null)
+            return 0;
 
         int SizeOfLeftBTafterCurrNode = size(node.left);
         int SizeOfRightBTafterCurrNode = size(node.right);
@@ -36,7 +37,6 @@ public class A_NumberOfNodesInBT {
 
         return SizeOfBTIncludingCurrNode;
     }
-
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -60,9 +60,6 @@ public class A_NumberOfNodesInBT {
 }
 
 /*
-Sample Input
-19
-50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n
-Sample Output
-9
+ * Sample Input 19 50 25 12 n n 37 30 n n n 75 62 n 70 n n 87 n n Sample Output
+ * 9
  */

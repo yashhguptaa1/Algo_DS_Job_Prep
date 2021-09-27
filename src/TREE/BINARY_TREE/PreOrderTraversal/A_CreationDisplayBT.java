@@ -6,24 +6,24 @@ public class A_CreationDisplayBT {
 
     public static class TreeNode {
 
-      //made public afterwards so that they can be accessed outside package by other classes
-      public int val;
-      public TreeNode left;
-      public TreeNode right;
+        // made public afterwards so that they can be accessed outside package by other
+        // classes
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
 
-      public TreeNode(int x) {
-       val = x;
-       left=null;
-       right=null;
-      }
+        public TreeNode(int x) {
+            val = x;
+            left = null;
+            right = null;
+        }
 
-      public TreeNode(int x,TreeNode lcn,TreeNode rcn)
-      {
-          val = x;
-          left=lcn;
-          right=rcn;
-      }
-  }
+        public TreeNode(int x, TreeNode lcn, TreeNode rcn) {
+            val = x;
+            left = lcn;
+            right = rcn;
+        }
+    }
 
     public static class Pair {
         TreeNode node;
@@ -50,20 +50,20 @@ public class A_CreationDisplayBT {
         display(root.right);
     }
 
-    //For p.state if
-    //0 -> Process Left child = Pre
-    //1 -> Process right child= In
-    //2 -> Pop the current node from stack = Post
+    // For p.state if
+    // 0 -> Process Left child = Pre
+    // 1 -> Process right child= In
+    // 2 -> Pop the current node from stack = Post
     public static TreeNode construct(Integer[] arr) {
 
-        //Make first element of array as ROOT of BT
+        // Make first element of array as ROOT of BT
         TreeNode root = new TreeNode(arr[0]);
 
         // Stack to track states of Previous nodes
         Stack<Pair> st = new Stack<>();
         st.push(new Pair(root, 0));
 
-        //To traverse input array
+        // To traverse input array
         int indx = 0;
 
         while (st.size() > 0) {
@@ -72,18 +72,18 @@ public class A_CreationDisplayBT {
                 indx++;
                 if (arr[indx] != null) {
 
-                    //Since TreeNode constructor initializes
-                    //node.left as null
-                    //node.right as null
-                    //so if we get a null (no child present)
-                    //we dont explicitly set node.left= null
+                    // Since TreeNode constructor initializes
+                    // node.left as null
+                    // node.right as null
+                    // so if we get a null (no child present)
+                    // we dont explicitly set node.left= null
                     TreeNode nn = new TreeNode(arr[indx]);
                     p.node.left = nn;
                     st.push(new Pair(nn, 0));
                 }
 
                 // if no more left child that is if we get NULL
-                //increment state so that we can now start adding child in right half
+                // increment state so that we can now start adding child in right half
                 p.state++;
             } else if (p.state == 1) {
                 indx++;
@@ -94,8 +94,8 @@ public class A_CreationDisplayBT {
                 }
 
                 // if no more right child or if we get NULL
-                //increment state so that we can pop the curr Node
-                //denotes for curr node all its child have been added
+                // increment state so that we can pop the curr Node
+                // denotes for curr node all its child have been added
                 p.state++;
             } else {
                 // pop out node-pair from stack
@@ -104,7 +104,6 @@ public class A_CreationDisplayBT {
         }
         return root;
     }
-
 
     public static void main(String[] args) {
 

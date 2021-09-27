@@ -5,16 +5,9 @@ import java.util.*;
 
 public class redundantConnection {
 
-    static int[] par;
-
-    public static int findPar(int u) {
-        return par[u] == -1 ? u : (par[u] = findPar(par[u]));
-    }
-
-    public static int[] findRedundantConnection(int[][] edges) {
+    public static int[] findRedundantConnection(int N, int[][] edges) {
 
         //In Ques:given a graph that started as a tree with n nodes labeled from 1 to n
-        int N = edges.length + 1;
         par = new int[N];
         Arrays.fill(par, -1);
 
@@ -24,17 +17,26 @@ public class redundantConnection {
 
             //we dont use merge function here as we have to only find cycle here
             //we dont have to create a new spanning tree or optimize union
-            if (p1 != p2)
+            if (p1 == p2)
                 par[p1] = p2;
+
             else
-                //Only one extra edge present according to ques
+                return edge;
+
+
+            //Only one extra edge present according to ques
                 //Return an edge that can be removed so that the resulting graph is a tree of n nodes.
                 return edge;
 
         }
         return new int[0];
-
     }
+    static int[] par;
+
+    public static int findPar(int u) {
+        return par[u] == -1 ? u : (par[u] = findPar(par[u]));
+    }
+
 
     public static void main(String[] args) throws IOException {
         BufferedReader inp =new BufferedReader(new InputStreamReader(System.in));
@@ -49,7 +51,7 @@ public class redundantConnection {
             edges[i][1]=Integer.parseInt(s[1]);
         }
 
-        int res[]=findRedundantConnection(edges);
+        int res[]=findRedundantConnection(edges.length,edges);
 
         System.out.println("[" +res[0]+","+res[1]+"]");
     }
